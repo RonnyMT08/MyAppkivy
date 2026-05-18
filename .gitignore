@@ -1,0 +1,30 @@
+# Python virtual environments
+venv/
+ENV/
+env/
+.env/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Buildozer / Android build artifacts
+.buildozer/
+bin/
+*.apk
+*.aab
+
+# IDE / editor files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
