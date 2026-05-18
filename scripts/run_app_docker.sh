@@ -1,21 +1,24 @@
-#!/bin/bash 
+#!/usr/bin/env bash
+set -euo pipefail
 
-xhost +local:docker
+APP_NAME="myapp_container"
+IMAGE_NAME="kivy-app"
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-#construct the docker image
-docker build -t kivy-app .
+# Clean up any previous container with the same name
+docker rm -f "$APP_NAME" >/dev/null 2>&1 || true
 
-# run the docker container
-docker run -it \
-  -e DISPLAY=$DISPLAY \
+# Authorize local Docker containers to connect to the X server
+xhost +local:docker >/dev/null 2>&1 || true
+
+# Build the Docker image
+docker build -t "$IMAGE_NAME" "$PROJECT_DIR"
+
+# Run the container mounting the current project
+docker run --rm -it \
+  --name "$APP_NAME" \
+  -e DISPLAY="${DISPLAY:-:0}" \
+  -v "$PROJECT_DIR":/app \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  --name myapp_container \
-  kivy-app
+  "$IMAGE_NAME"
 
-# access the container and run the app
-docker exec -it myapp_container bash
-
-# inside the container, run the app
-python main.py
-
-#
