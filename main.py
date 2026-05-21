@@ -5,7 +5,10 @@ from kivy.properties import ListProperty
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 
-Window.clearcolor = (0.08, 0.10, 0.14, 1)
+# similar pantalla de dispositivo
+Window.size = (360, 640)
+# simular pantalla de windows
+# Window.fullscreen = True
 
 class LoginScreen(Screen):
     def login_app(self, username, password):
@@ -39,6 +42,7 @@ class LoginButton(Button):
 class MyApp(App):
     def build(self):
         self.title = "My Kivy App"
+        self.icon = "assets/images/icon.png"
         return Builder.load_file("main.kv")
 
 if __name__ == "__main__":

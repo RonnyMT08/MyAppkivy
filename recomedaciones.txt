@@ -1,0 +1,144 @@
+BoxLayout → organiza widgets en fila o columna. Ideal para estructuras simples.
+
+GridLayout → organiza en filas y columnas. Útil para formularios o tableros.
+
+FloatLayout → posiciona widgets con coordenadas relativas (pos_hint, size_hint). Muy flexible, pero puede volverse difícil de mantener si abusás de posiciones absolutas.
+
+AnchorLayout → ancla widgets a esquinas o centro.
+
+ScreenManager → para manejar múltiples pantallas, como ya estás usando.
+
+en label 
+    halign → "left", "center", "right".
+
+    valign → "top", "middle", "bottom".
+
+0, 0, 1, 1         # Fondo azul
+
+1, 1, 1, 1         #color blanco
+
+(0.9, 0.9, 0.9, 1) # gris claro
+
+0, 0, 0, 1         #negro
+ 
+
+
+        #container del login
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: (0.5, 0.3)
+            pos_hint: {"center_x": 0.5, "center_y": 0.5} # Centrado en la pantalla
+            canvas.before:
+                Color:
+                    rgba: (0, 0, 0, 0.2)  # Fondo transparente color negro    
+
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [20]
+
+            Label:
+                text: "Login"
+                font_size: 24
+                color: (1, 1, 1, 1)  # Color del texto blanco
+                pos_hint: {"center_x": 0.5, "center_y": 0.8} # Centrado en la pantalla
+        
+            Image:
+                source: "logo.png"  # Asegúrate de tener un logo.png en tu carpeta de recursos
+                size_hint: None, None
+                width: 32
+                height: 32
+                pos_hint: {"x": 0.1, "y": 0.5} # Posición a la derecha del centro
+                
+            TextInput:
+                id: username
+                hint_text: "Username"
+                size_hint: None, None
+                width: 275
+                height: 35
+                multiline: False
+                font_size: 18
+                input_filter: lambda text, from_undo: text[:20]  # Limita a 20 caracteres
+                background_normal: "" # Elimina el fondo predeterminado
+                foreground_color: (1, 1, 1, 1)  # Color del texto blanco
+                background_color: (0, 0, 0, 0.25)  # Fondo transparente
+                pos_hint: {"x": 0.2, "y": 0.5} # Centrado en la pantalla
+                
+            Image:
+                source: "logo.png"  # Asegúrate de tener un logo.png en tu carpeta de recursos
+                size_hint: None, None
+                width: 32
+                height: 32
+                pos_hint: {"x": 0.1, "y": 0.4} # Posición a la derecha del centro
+                
+            TextInput:
+                id: password
+                hint_text: "Password"
+                size_hint: None, None
+                password: True
+                multiline: False
+                font_size: 18
+                width: 275
+                height: 35
+                input_filter: lambda text, from_undo: text[:20]  # Limita a 20 caracteres
+                background_normal: "" # Elimina el fondo predeterminado
+                foreground_color: (1, 1, 1, 1)  # Color del texto blanco
+                background_color: (0, 0, 0, 0.25)  # Fondo transparente
+                pos_hint: {"x": 0.2, "y": 0.4} # Centrado en la pantalla
+                
+
+            LoginButton: #solo para referencia y uso en el código python  
+                text: "Login"
+                width: 300
+                height: 35
+                pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                on_press: self.fill_color = (0, 1, 0, 0.5); root.login_app(username.text, password.text)  # Llama a la función del botón
+                on_release: self.fill_color = (0, 1, 0, 0.8);  # color original al soltar el botón
+
+            RoundedButton:
+                text: "Google"
+                width: 145
+                height: 35
+                pos_hint: {"right": 0.49, "y": 0.15}  # A
+                on_press: self.fill_color = (0, 1, 0, 0.5); root.exit_app()  # Llama a la función del botón
+                on_release: self.fill_color = (0, 0, 0, 0.25);  # color original al soltar el botón
+
+            RoundedButton:
+                text: "Create User"
+                width: 145
+                height: 35
+                pos_hint: {"x": 0.51, "y": 0.15}  # Abajo a la derecha
+                on_press: self.fill_color = (0, 1, 0, 0.5); root.create_user()  # Llama a la función del botón
+                on_release: self.fill_color = (0, 0, 0, 0.25);  # color original al soltar el botón
+
+
+
+<RoundedButton>: #reglas para el botón redondeado
+    background_normal: ""
+    background_color: 0, 0, 0, 0
+    size_hint: None, None
+    width: 400
+    height: 200
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    canvas.before: 
+        Color:
+            rgba: self.fill_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: self.radius
+
+<LoginButton>: #reglas para el botón de login
+    background_normal: ""
+    background_color: 0, 0, 0, 0
+    size_hint: None, None
+    width: 300
+    height: 35
+    pos_hint: {"center_x": 0.5, "center_y": 0.3}
+    canvas.before:
+        Color:
+            rgba: self.fill_color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [10]
