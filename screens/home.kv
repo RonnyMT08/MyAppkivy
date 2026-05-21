@@ -1,10 +1,57 @@
 #kivy 2.2.0
 
 <HomeScreen>:
+    # box superior
     BoxLayout:
         orientation: "vertical"
-        Label:
-            text: "Welcome to the Home Screen!"
-            font_size: 24
-            size_hint_y: 0.2
+        spacing: 0
+        padding: 0 #no hay paddin
+        canvas.before:
+            Color:
+                rgba: (1, 1, 1, 0.5)   # Fondo blanco opaco
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.5 #tamaño del cuadro AMRILLO
+            spacing: 0
+            padding: 0 #no hay paddin
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 0, 0.5)   # Fondo Amarillo
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Air soft"
+                font_size: 24 #tamano de fuente
+                halign: "left" #alinear texto
+                valign: "middle" #alinear texto
+                text_size: self.size #para alinear el texto
+                size_hint_y: None #tamaño del cuadro
+                height: 50   # altura fija
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+
             
+            Label:
+                text: "Ronny"
+                font_size: 24
+                size_hint: 0.3 , 0
+                size_hint_y: None #tamaño del cuadro
+                height: 50
+                canvas.before:
+                    Color: 
+                        rgba: (1, 0, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+                

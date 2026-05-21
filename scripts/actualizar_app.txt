@@ -1,0 +1,38 @@
+Pasos para actualizar la app
+
+1. El proceso no es automático.
+   - Cambios en el código o recursos requieren recompilar la app.
+   - El APK / paquete no se actualiza solo.
+
+2. Trabaja en tu código.
+   - Modifica `main.py`, los archivos `.kv`, `requirements.txt`, `buildozer.spec` o cualquier recurso.
+   - Si agregas nuevas dependencias, actualiza `requirements` en `buildozer.spec`.
+
+3. Verifica cambios locales.
+   - Ejecuta la app localmente con Python: `python main.py`.
+   - Asegúrate de que funcione antes de compilar.
+
+4. Si usas Docker para desarrollo, usa el script existente.
+   - En la carpeta `scripts`, ejecuta:
+     `./run_app_docker.sh`
+   - Esto abrirá un contenedor Docker con el proyecto montado.
+   - Dentro del contenedor, puedes probar con `python main.py`.
+
+5. Para compilar un APK de Android.
+   - Desde el proyecto principal, ejecuta:
+     `buildozer android debug`
+   - Si el comando falla, revisa los mensajes y corrige `buildozer.spec` o dependencias.
+
+6. Para generar la versión de producción.
+   - Usa:
+     `buildozer android release`
+   - Necesitas configurar firma (`android.keystore`, `android.keyalias`, etc.) si quieres un APK final.
+
+7. Para instalar la nueva versión en un dispositivo.
+   - Conecta el dispositivo USB y ejecuta:
+     `buildozer android deploy run`
+   - O copia el APK generado desde `bin/` y instálalo manualmente.
+
+8. Resumen breve.
+   - Cambias el código → vuelves a compilar → instalas el nuevo APK.
+   - La actualización no se hace automáticamente solo por editar archivos.

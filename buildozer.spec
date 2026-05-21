@@ -7,22 +7,22 @@ package.domain = org.example
 
 # Archivo principal
 source.dir = .
-source.include_exts = py,kv,png,jpg,ttf,env
+source.include_exts = py,kv,png,jpg,ttf
 
 # Icono de la app
-icon.filename = %(source.dir)s/assets/icon.png
+icon.filename = %(source.dir)s/assets/images/icon.png
 
 # Orientación de la pantalla
 orientation = portrait
 
 # Permisos de Android
-android.permissions = INTERNET, CAMERA
+android.permissions = INTERNET
 
 # Versión de la app
 version = 0.1
 
 # Dependencias necesarias
-requirements = python3,kivy,python-dotenv
+requirements = python3,kivy
 
 # Ocultar consola (solo relevante en Windows)
 console = False
@@ -33,6 +33,13 @@ exclude_patterns = tests, *.md, .venv
 [buildozer]
 # Plataforma destino
 target = android
+
+# Opciones de Android
+android.api = 33
+android.minapi = 21
+android.ndk = 25b
+android.ndk_api = 21
+android.arch = armeabi-v7a
 
 # Directorio de compilación
 build_dir = .buildozer

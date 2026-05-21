@@ -1,0 +1,30 @@
+El proyecto tiene la estructura básica para generar una app Android descargable, pero faltan algunos pasos y ajustes esenciales:
+
+1. Configuración de Buildozer
+   - Añadir valores explícitos de Android SDK/NDK en `buildozer.spec` para evitar errores de compilación con versiones modernas.
+   - Ejemplos: `android.api`, `android.minapi`, `android.ndk`, `android.arch`.
+   - Validar que `target = android` sea correcto para la versión de Buildozer que uses.
+
+2. Dependencias reales del app
+   - `buildozer.spec` incluye `requirements = python3,kivy,python-dotenv`.
+   - Si no usas `.env` dentro de la app, `python-dotenv` no es necesario.
+   - Si usas más librerías en tiempo de ejecución (requests, Plyer, etc.), agrégalas aquí.
+
+3. Archivos y recursos
+   - `main.kv` y los archivos `screens/*.kv` están incluidos y deberían empaquetarse bien.
+   - El ícono `assets/images/icon.png` existe y está referenciado correctamente.
+   - La fuente `assets/fonts/RobotoSlab.ttf` existe.
+
+4. Permisos y uso real
+   - Tienes `android.permissions = INTERNET, CAMERA`.
+   - Solo deja permisos que la app realmente use, para reducir problemas de revisión en Google Play.
+
+5. Entorno de compilación
+   - Para compilar necesitas Buildozer instalado en Linux y el SDK/NDK de Android.
+   - También conviene limpiar `.buildozer/` si hay compilaciones anteriores fallidas.
+
+6. Comandos recomendados
+   - `buildozer android debug` para probar localmente.
+   - `buildozer android release` para generar un APK final.
+
+Resumen: el proyecto está cercano a ser construible, pero falta completar y depurar la configuración de Buildozer y asegurar que las dependencias y permisos sean los correctos.
