@@ -17,14 +17,16 @@
             # Caja 1
             BoxLayout:
                 orientation: "vertical"
+                size_hint: 1, 1  
                 spacing: 0
-                padding: 0
+                padding: 30
                 canvas.before:
                     Color:
                         rgba: (0.5, 0.5, 0.5, 1)  # fondo gris claro
                     Rectangle:
                         pos: self.pos
                         size: self.size
+                #Login Account
                 BoxLayout:
                     orientation: "vertical"
                     padding: [30, 0, 0, 0]
@@ -49,12 +51,13 @@
                         size_hint_y: None
                         height: 30   # altura fija
 
-                        
+                # Email    
                 BoxLayout:
                     orientation: "vertical"
                     padding: [30, 0, 30, 0]
 
                     Label:
+                        id: email
                         text: "Email"
                         font_name: "assets/fonts/RobotoSlab.ttf"
                         halign: "left"
@@ -85,36 +88,83 @@
                             size_hint_y: None
                             height: 30   # altura más grande para que el TextInput entre bien
                             
-
+                #password
                 BoxLayout:
-                    padding: [30, 0, 0, 0]
                     orientation: "vertical"
+                    padding: [30, 0, 30, 0]
+
                     Label:
+                        id: password
                         text: "Password"
                         font_name: "assets/fonts/RobotoSlab.ttf"
                         halign: "left"
                         valign: "middle"
                         text_size: self.size
                         size_hint_y: None
-                        height: 30   # altura fija
-                    Label:
-                        text: "Creacte yout password"
-                        font_name: "assets/fonts/RobotoSlab.ttf"
-                        halign: "left"
-                        valign: "middle"
-                        text_size: self.size
+                        height: 30   # altura más grande para que el TextInput entre bien
+
+                    BoxLayout:
+                        orientation: "vertical"
                         size_hint_y: None
-                        height: 30   # altura fija                  
+                        height: 30   # altura más grande para que el TextInput entre bien
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 0.2)   # color de fondo
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [30]    
+                        TextInput:
+                            text: "Enter your password"
+                            font_name: "assets/fonts/RobotoSlab.ttf"
+                            padding: 5
+                            multiline: False
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_y: None
+                            height: 30   # altura más grande para que el TextInput entre bien
+                                           
                 
 
+            
             # Caja 2
-            FloatLayout:
+            BoxLayout:
+                #padding: 0
+                #spacing: 0
+                size_hint: 1, 0.6  
+                orientation: "vertical"
                 canvas.before:
                     Color:
                         rgba: (0.8, 0.5, 0.5, 1)  # fondo rojizo
                     Rectangle:
                         pos: self.pos
                         size: self.size
-                Label:
-                    text: "Caja 2"
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                # sign in
+                FloatLayout:
+                    padding: 40
+                    Button:
+                        text: "Sign in"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        size_hint: 0.4 , 0.2
+                        font_name: "assets/fonts/RobotoSlab.ttf"
+                        height: 50
+                        #size_hint_y: None
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 0.2)   # color de fondo
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10] 
+                        on_press: self.fill_color = (0, 1, 0, 0.5); root.login_app(email.text, password.text)  # Llama a la función del botón
+                        on_release: self.fill_color = (0, 1, 0, 0.8);  # color original al soltar el botón
+ 
+                
+                    Label:
+                        text: "Created account"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                        font_name: "assets/fonts/RobotoSlab.ttf"
+                        size_hint_y: None
+                        height: 30  
+                

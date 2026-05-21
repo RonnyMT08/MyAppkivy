@@ -1,11 +1,11 @@
 from kivy.app import App
-from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.properties import ListProperty
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 
 # similar pantalla de dispositivo
+from kivy.core.window import Window
 Window.size = (360, 640)
 # simular pantalla de windows
 # Window.fullscreen = True
@@ -13,31 +13,32 @@ Window.size = (360, 640)
 class LoginScreen(Screen):
     def login_app(self, username, password):
         if username.strip() and password.strip():
+            print("Se ingreso al home")
             self.manager.current = "home"
         else:
             print("Por favor ingresa usuario y contraseña")
 
-    def create_user(self):
-        self.manager.current = "settings"
+    # def create_user(self):
+    #     self.manager.current = "settings"
 
-    def exit_app(self):
-        App.get_running_app().stop()
+    # def exit_app(self):
+    #     App.get_running_app().stop()
 
 class HomeScreen(Screen):
     def go_settings(self):
-        self.manager.current = "settings"
-
-class SettingsScreen(Screen):
-    def go_home(self):
         self.manager.current = "home"
 
-class RoundedButton(Button):
-    fill_color = ListProperty([0, 0, 0, 0.25])
-    radius = ListProperty([20, 20, 20, 20])
+# class SettingsScreen(Screen):
+#     def go_home(self):
+#         self.manager.current = "home"
 
-class LoginButton(Button):
-    fill_color = ListProperty([0, 1, 0, 0.8])
-    radius = ListProperty([10, 10, 10, 10])
+# class RoundedButton(Button):
+#     fill_color = ListProperty([0, 0, 0, 0.25])
+#     radius = ListProperty([20, 20, 20, 20])
+
+# class LoginButton(Button):
+#     fill_color = ListProperty([0, 1, 0, 0.8])
+#     radius = ListProperty([10, 10, 10, 10])
 
 class MyApp(App):
     def build(self):

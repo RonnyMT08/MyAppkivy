@@ -20,7 +20,8 @@ docker run -it \
   -e DISPLAY=${DISPLAY:-:0} \
   -v "$PROJECT_DIR":/app \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
-  "$IMAGE_NAME"
+  "$IMAGE_NAME" \
+  bash
 
 # Para detener 'crl+c'
 # Para correr container 'docker start myapp_container' 

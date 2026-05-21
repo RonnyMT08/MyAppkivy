@@ -2,11 +2,18 @@ FROM python:3.10-slim
 
 # Instalar dependencias del sistema necesarias para Kivy
 RUN apt-get update && apt-get install -y \
-    libgl1 \
-    libgles2 \
-    libglu1-mesa \
-    xvfb \
+    #soporte multi touch
     libmtdev1 \
+    libmtdev-dev\
+    #soporte portapapeles
+    xclip xsel\
+    #soporte grafico
+    libsdl2-dev \
+    libsdl2-image-dev \
+    libsdl2-mixer-dev \
+    libsdl2-ttf-dev \
+    libgl1-mesa-dev \
+    x11-utils \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -22,4 +29,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Ejecutar la aplicación dentro de xvfb
-CMD ["xvfb-run", "python", "main.py"]
+CMD ["python", "main.py"]

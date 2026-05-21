@@ -1,64 +1,64 @@
-<SettingsScreen>:
-    BoxLayout:
-        orientation: "vertical"
-        padding: 24
-        spacing: 18
-        canvas.before:
-            Color:
-                rgba: 0.07, 0.10, 0.16, 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
+# <SettingsScreen>:
+#     BoxLayout:
+#         orientation: "vertical"
+#         padding: 24
+#         spacing: 18
+#         canvas.before:
+#             Color:
+#                 rgba: 0.07, 0.10, 0.16, 1
+#             Rectangle:
+#                 pos: self.pos
+#                 size: self.size
 
-        Label:
-            text: "Settings"
-            font_size: 32
-            size_hint_y: None
-            height: 64
-            color: 1, 1, 1, 1
+#         Label:
+#             text: "Settings"
+#             font_size: 32
+#             size_hint_y: None
+#             height: 64
+#             color: 1, 1, 1, 1
 
-        BoxLayout:
-            size_hint_y: None
-            height: 50
-            spacing: 12
-            padding: [10, 0]
+#         BoxLayout:
+#             size_hint_y: None
+#             height: 50
+#             spacing: 12
+#             padding: [10, 0]
 
-            Label:
-                text: "Tema oscuro"
-                color: 1, 1, 1, 1
-                size_hint_x: 0.7
+#             Label:
+#                 text: "Tema oscuro"
+#                 color: 1, 1, 1, 1
+#                 size_hint_x: 0.7
 
-            ToggleButton:
-                text: "Activo"
-                state: "down"
-                background_color: 0.18, 0.18, 0.18, 1
-                color: 1, 1, 1, 1
+#             ToggleButton:
+#                 text: "Activo"
+#                 state: "down"
+#                 background_color: 0.18, 0.18, 0.18, 1
+#                 color: 1, 1, 1, 1
 
-        BoxLayout:
-            size_hint_y: None
-            height: 50
-            spacing: 12
-            padding: [10, 0]
+#         BoxLayout:
+#             size_hint_y: None
+#             height: 50
+#             spacing: 12
+#             padding: [10, 0]
 
-            Label:
-                text: "Notificaciones"
-                color: 1, 1, 1, 1
-                size_hint_x: 0.7
+#             Label:
+#                 text: "Notificaciones"
+#                 color: 1, 1, 1, 1
+#                 size_hint_x: 0.7
 
-            ToggleButton:
-                text: "On / Off"
-                background_color: 0.18, 0.18, 0.18, 1
-                color: 1, 1, 1, 1
+#             ToggleButton:
+#                 text: "On / Off"
+#                 background_color: 0.18, 0.18, 0.18, 1
+#                 color: 1, 1, 1, 1
 
-        Widget:
+#         Widget:
 
-        RoundedButton:
-            text: "Volver al Home"
-            size_hint: None, None
-            width: 220
-            height: 44
-            pos_hint: {"center_x": 0.5}
-            on_press: self.fill_color = (0, 1, 0, 0.5)
-            on_release:
-                self.fill_color = (0, 0, 0, 0.25)
-                root.go_home()
+#         RoundedButton:
+#             text: "Volver al Home"
+#             size_hint: None, None
+#             width: 220
+#             height: 44
+#             pos_hint: {"center_x": 0.5}
+#             on_press: self.fill_color = (0, 1, 0, 0.5)
+#             on_release:
+#                 self.fill_color = (0, 0, 0, 0.25)
+#                 root.go_home()
