@@ -15,10 +15,14 @@ xhost +local:docker >/dev/null 2>&1 || true
 docker build -t "$IMAGE_NAME" "$PROJECT_DIR"
 
 # Run the container mounting the current project
-docker run --rm -it \
+docker run -it \
   --name "$APP_NAME" \
-  -e DISPLAY="${DISPLAY:-:0}" \
+  -e DISPLAY=${DISPLAY:-:0} \
   -v "$PROJECT_DIR":/app \
   -v /tmp/.X11-unix:/tmp/.X11-unix \
   "$IMAGE_NAME"
 
+# Para detener 'crl+c'
+# Para correr container 'docker start myapp_container' 
+# Para entrar en exec 'docker exec -it myapp_conteiner bash'
+# Levantar app 'python main.py'
