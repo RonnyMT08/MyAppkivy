@@ -1,11 +1,12 @@
 #kivy 2.2.0
 
 <HomeScreen>:
-    # box superior
+    # contenedor de fondo
     BoxLayout:
         orientation: "vertical"
+        size_hint: 1, 1
         spacing: 0
-        padding: 0 #no hay paddin
+        padding: dp(10) #no hay paddin
         canvas.before:
             Color:
                 rgba: (1, 1, 1, 0.5)   # Fondo blanco opaco
@@ -13,25 +14,28 @@
                 pos: self.pos
                 size: self.size
 
+        #contenedor de del titulo y el nombre
         BoxLayout:
             orientation: "horizontal"
-            size_hint_y: 0.5 #tamaño del cuadro AMRILLO
-            spacing: 0
-            padding: 0 #no hay paddin
+            spacing: dp(20)
+            padding: dp(10)
+            size_hint: 1, None
+            height: dp(100)
             canvas.before:
                 Color:
-                    rgba: (1, 1, 0, 0.5)   # Fondo Amarillo
+                    rgba: (1, 0, 0, 0.5)   # Fondo rojo
                 Rectangle:
                     pos: self.pos
                     size: self.size
             Label:
                 text: "Air soft"
-                font_size: 24 #tamano de fuente
+                font_size: sp(18) #tamano de fuente
                 halign: "left" #alinear texto
                 valign: "middle" #alinear texto
                 text_size: self.size #para alinear el texto
                 size_hint_y: None #tamaño del cuadro
-                height: 50   # altura fija
+                height: dp(55)   # altura fija
+                padding: dp(15)
                 canvas.before:
                     Color: 
                         rgba: (1, 1, 1, 0.5)
@@ -39,14 +43,12 @@
                         pos: self.pos
                         size: self.size
                         radius: [5]
-
-            
             Label:
                 text: "Ronny"
-                font_size: 24
-                size_hint: 0.3 , 0
+                font_size: sp(18)
+                size_hint: 0.2 , 0
                 size_hint_y: None #tamaño del cuadro
-                height: 50
+                height: dp(55)
                 canvas.before:
                     Color: 
                         rgba: (1, 0, 1, 0.5)
@@ -54,4 +56,163 @@
                         pos: self.pos
                         size: self.size
                         radius: [5]
-                
+        
+        #Categorias
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: dp(90)
+            spacing: dp(20)
+            padding: dp(10) 
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 0, 0.5)   # Fondo Amarillo
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "mapas"
+                font_size: sp(16) #tamano de fuente
+                size_hint: 0.3, 0.3
+                size_hint_y: None #tamaño del cuadro
+                height: dp(55)   # altura fija
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "kits"
+                font_size: sp(16)
+                size_hint: 0.3 , 0.3
+                size_hint_y: None #tamaño del cuadro
+                height: dp(55)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "kits"
+                font_size: sp(16)
+                size_hint: 0.3 , 0.3
+                size_hint_y: None #tamaño del cuadro
+                height: dp(55)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "kits"
+                font_size: sp(16)
+                size_hint: 0.3 , 0.3
+                size_hint_y: None #tamaño del cuadro
+                height: dp(55)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "kits"
+                font_size: sp(16)
+                size_hint: 0.3 , 0.3
+                size_hint_y: None #tamaño del cuadro
+                height: dp(55)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+        
+        # Modos de juego
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None 
+            height: dp(300)
+            spacing: dp(20)
+            padding: dp(30)
+            canvas.before:
+                Color:
+                    rgba: (0, 1, 1, 0.5)   # Fondo Azul
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "Mapa 1"
+                font_size: sp(24) #tamano de fuente
+                size_hint_y: None #tamaño del cuadro
+                height: dp(200)   # altura fija
+                padding: dp(15)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "Mapa 2"
+                font_size: sp(24) #tamano de fuente
+                size_hint_y: None #tamaño del cuadro
+                height: dp(250)   # altura fija
+                padding: dp(15)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+            Label:
+                text: "Mapa 3"
+                font_size: sp(24) #tamano de fuente
+                size_hint_y: None #tamaño del cuadro
+                height: dp(200)   # altura fija
+                padding: dp(15)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+        
+        # Navegaciones
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: dp(100)
+            spacing: dp(20)
+            padding: dp(40)
+            canvas.before:
+                Color:
+                    rgba: (1, 0, 0, 0.5)   # Fondo Rojo
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: "navegacion"
+                font_size: sp(24) #tamano de fuente
+                size_hint: 1, None
+                height: dp(55)   # altura fija
+                padding: dp(15)
+                canvas.before:
+                    Color: 
+                        rgba: (1, 1, 1, 0.5)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [5]
+                            

@@ -5,8 +5,6 @@ from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 
 # similar pantalla de dispositivo
-from kivy.core.window import Window
-Window.size = (360, 640)
 # simular pantalla de windows
 # Window.fullscreen = True
 
