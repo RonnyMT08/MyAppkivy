@@ -61,7 +61,6 @@
         BoxLayout:
             orientation: "horizontal"
             size_hint: 1, None
-            height: dp(90)
             spacing: dp(20)
             padding: dp(10) 
             canvas.before:
@@ -139,8 +138,7 @@
         # Modos de juego
         BoxLayout:
             orientation: "horizontal"
-            size_hint: 1, None 
-            height: dp(300)
+            size_hint: 1, 0.5 
             spacing: dp(20)
             padding: dp(30)
             canvas.before:
@@ -152,8 +150,7 @@
             Label:
                 text: "Mapa 1"
                 font_size: sp(24) #tamano de fuente
-                size_hint_y: None #tamaño del cuadro
-                height: dp(200)   # altura fija
+                size_hint:1, 0.8 #tamaño del cuadro
                 padding: dp(15)
                 canvas.before:
                     Color: 
@@ -165,8 +162,7 @@
             Label:
                 text: "Mapa 2"
                 font_size: sp(24) #tamano de fuente
-                size_hint_y: None #tamaño del cuadro
-                height: dp(250)   # altura fija
+                size_hint: 1, 1
                 padding: dp(15)
                 canvas.before:
                     Color: 
@@ -178,8 +174,7 @@
             Label:
                 text: "Mapa 3"
                 font_size: sp(24) #tamano de fuente
-                size_hint_y: None #tamaño del cuadro
-                height: dp(200)   # altura fija
+                size_hint: 1, 0.8 #tamaño del cuadro
                 padding: dp(15)
                 canvas.before:
                     Color: 
@@ -191,28 +186,79 @@
         
         # Navegaciones
         BoxLayout:
-            orientation: "horizontal"
+            orientation: "vertical"
             size_hint: 1, None
             height: dp(100)
-            spacing: dp(20)
-            padding: dp(40)
+            padding: dp(50), dp(0), dp(50), dp(20)
             canvas.before:
                 Color:
                     rgba: (1, 0, 0, 0.5)   # Fondo Rojo
                 Rectangle:
                     pos: self.pos
                     size: self.size
-            Label:
-                text: "navegacion"
-                font_size: sp(24) #tamano de fuente
+                    
+            BoxLayout:
+                orientation: "horizontal"
                 size_hint: 1, None
-                height: dp(55)   # altura fija
-                padding: dp(15)
+                spacing: dp(25)
+                height: dp(50)
                 canvas.before:
                     Color: 
-                        rgba: (1, 1, 1, 0.5)
+                        rgba: (1, 0, 1, 0.5)
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
-                        radius: [5]
+                
+                Label:
+                    text: "Home"
+                    font_size: sp(14) #tamano de fuente
+                    size_hint: 1, None
+                    height: dp(50)   # altura fija
+                    padding: dp(15)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [5]
+                Label:
+                    text: "Reservas"
+                    font_size: sp(14) #tamano de fuente
+                    size_hint: 1, None
+                    height: dp(50)   # altura fija
+                    padding: dp(15)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [5]
+                Label:
+                    text: "Contactos"
+                    font_size: sp(14) #tamano de fuente
+                    size_hint: 1, None
+                    height: dp(50)   # altura fija
+                    padding: dp(15)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [5]
+                Label:
+                    text: "Cuentas"
+                    font_size: sp(14) #tamano de fuente
+                    size_hint: 1, None
+                    height: dp(50)   # altura fija
+                    padding: dp(15)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [5]
                             

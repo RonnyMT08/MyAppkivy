@@ -26,6 +26,10 @@ class HomeScreen(Screen):
     def go_settings(self):
         self.manager.current = "home"
 
+class ReservasScreen(Screen):
+    def go_reservas(self):
+        self.manager.current = "reservas"
+
 # class SettingsScreen(Screen):
 #     def go_home(self):
 #         self.manager.current = "home"
