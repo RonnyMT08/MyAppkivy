@@ -4,10 +4,6 @@ from kivy.properties import ListProperty
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 
-# similar pantalla de dispositivo
-# simular pantalla de windows
-# Window.fullscreen = True
-
 class LoginScreen(Screen):
     def login_app(self, username, password):
         if username.strip() and password.strip():
@@ -23,14 +19,42 @@ class LoginScreen(Screen):
     #     App.get_running_app().stop()
 
 class HomeScreen(Screen):
-    def go_settings(self):
+    def go_home(self):
         self.manager.current = "home"
+    def go_reservas(self):
+        self.manager.current = "reservas"
+    def go_cuenta(self):
+        self.manager.current = "cuenta"
+    def go_contacto(self):
+        self.manager.current = "contacto"
 
 class ReservasScreen(Screen):
     def go_reservas(self):
         self.manager.current = "reservas"
+    def go_home(self):
+        self.manager.current = "home"
+    def go_cuenta(self):
+        self.manager.current = "cuenta"
+    def go_contacto(self):
+        self.manager.current = "contacto"
 
 class CuentaScreen(Screen):
+    def go_cuenta(self):
+        self.manager.current = "cuenta"
+    def go_home(self):
+        self.manager.current = "home"
+    def go_contacto(self):
+        self.manager.current = "contacto"
+    def go_reservas(self):
+        self.manager.current = "reservas"
+
+class ContactoScreen(Screen):
+    def go_contacto(self):
+        self.manager.current = "contacto"
+    def go_home(self):
+        self.manager.current = "home"
+    def go_reservas(self):
+        self.manager.current = "reservas"
     def go_cuenta(self):
         self.manager.current = "cuenta"
 

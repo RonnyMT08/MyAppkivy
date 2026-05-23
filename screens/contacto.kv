@@ -20,7 +20,7 @@
                     radius: [5]
             Label:
                 font_size: sp(20)
-                text: "MI CUENTA"
+                text: "CONTACTANOS"
         #FONDO DE LA PAGINA
         BoxLayout:
             orientation: "vertical"
@@ -33,7 +33,7 @@
                     pos: self.pos
                     size: self.size
 
-            #Conteiner de CUENTA
+            #Conteiner de contactos
             BoxLayout:
                 orientation: "vertical"
                 size_hint: 1, None
@@ -49,80 +49,6 @@
                         radius: [10] 
 
                 BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, 1
-                    BoxLayout:
-
-                        canvas.before:
-                            Color:
-                                rgba: (0, 1, 0, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        Label:
-                            text: "imagen"
-
-                    BoxLayout:
-                        orientation: "vertical"
-                        size_hint: 1, 1
-                        # canvas.before:
-                        #     Color:
-                        #         rgba: (1, 1, 0, 0.5)
-                        #     RoundedRectangle:
-                        #         pos: self.pos
-                        #         size: self.size
-                        #         radius: [10]
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Nombre: Ronny Mamani Torrez"
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Email: ronny@gmailc.com"        
-
-            #Conteiner de Estadisticas
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, 1
-                height: dp(200)
-                padding: dp(15), dp(0) #
-                spacing: 0 #
-                canvas.before:
-                    Color:
-                        rgba: (1, 1, 1, 0.5)
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [10] 
-
-                #Fecha y confirmacion 
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, None
-                    height: dp(55)
-                    padding: 0 #
-                    spacing: 0 #
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (1, 0, 0, 0.5)
-                    #     RoundedRectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                    #         radius: [10]  
-                    Label:
-                        padding: dp(15)
-                        size_hint: 1, None
-                        height: dp(55)
-                        font_size: sp(20)
-                        text: "Mi historial de jugadas"
-
-                BoxLayout:
                     orientation: "vertical"
                     size_hint: 1, 1
                     # canvas.before:
@@ -133,74 +59,68 @@
                     #         size: self.size
                     #         radius: [10]
                     Label:
-                        padding: dp(20), dp(0)
-                        size_hint: 1, None 
-                        height: dp(55)
-                        halign: "left" #alinear texto   
+                        padding: dp(20)
+                        halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Todos vs Todos"
+                        text: "Email"
                     Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
+                        padding: dp(20)
+                        halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
+                        text: "Instagram"  
                     Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
+                        padding: dp(20)
+                        halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
+                        text: "Facebook" 
                     Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
+                        padding: dp(20)
+                        halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
-
-                    BoxLayout:
-                        size_hint: 1,1           
+                        text: "Whatsapp" 
+                      
 
             # BoxLayout:
             #     size_hint: 1,1
 
             # nacegaciones
+            # Navegaciones
             BoxLayout:
                 orientation: "vertical"
                 size_hint: 1, None
                 height: dp(100)
                 padding: dp(50), dp(0), dp(50), dp(20)
-                canvas.before:
-                    Color:
-                        rgba: (1, 0, 0, 0.5)   # Fondo Rojo
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+                # canvas.before:
+                #     Color:
+                #         rgba: (1, 0, 0, 0.5)   # Fondo Rojo
+                #     Rectangle:
+                #         pos: self.pos
+                #         size: self.size
                         
                 BoxLayout:
                     orientation: "horizontal"
                     size_hint: 1, None
                     spacing: dp(25)
                     height: dp(50)
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 0, 1, 0.5)
-                        RoundedRectangle:
-                            pos: self.pos
-                            size: self.size
+                    # canvas.before:
+                    #     Color: 
+                    #         rgba: (1, 0, 1, 0.5)
+                    #     RoundedRectangle:
+                    #         pos: self.pos
+                    #         size: self.size
                     
-                    Label:
+                    Button:
                         text: "Home"
-                        font_size: sp(14) #tamano de fuente
+                        on_press: root.go_home()
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_size: sp(14) 
                         size_hint: 1, None
-                        height: dp(50)   # altura fija
+                        height: dp(50)
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -208,12 +128,15 @@
                             RoundedRectangle:
                                 pos: self.pos
                                 size: self.size
-                                radius: [5]
-                    Label:
+                                radius: [5]                    
+                    Button:
                         text: "Reservas"
-                        font_size: sp(14) #tamano de fuente
+                        on_press: root.go_reservas()
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_size: sp(14) 
                         size_hint: 1, None
-                        height: dp(50)   # altura fija
+                        height: dp(50)   
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -222,11 +145,14 @@
                                 pos: self.pos
                                 size: self.size
                                 radius: [5]
-                    Label:
+                    Button:
+                        on_press: root.go_contacto()
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
                         text: "Contactos"
-                        font_size: sp(14) #tamano de fuente
+                        font_size: sp(14) 
                         size_hint: 1, None
-                        height: dp(50)   # altura fija
+                        height: dp(50)
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -235,11 +161,14 @@
                                 pos: self.pos
                                 size: self.size
                                 radius: [5]
-                    Label:
-                        text: "Cuentas"
-                        font_size: sp(14) #tamano de fuente
+                    Button:
+                        text: "Cuenta"
+                        on_press: root.go_cuenta()
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_size: sp(14) 
                         size_hint: 1, None
-                        height: dp(50)   # altura fija
+                        height: dp(50)
                         padding: dp(15)
                         canvas.before:
                             Color: 

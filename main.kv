@@ -4,10 +4,17 @@
 #:include screens/home.kv
 #:include screens/reservas.kv
 #:include screens/cuenta.kv
+#:include screens/contacto.kv
 
 ScreenManager:
     # es el orden en que se muestra las pantallas
     id: screen_manager
+
+    LoginScreen:
+        name: "login"
+        
+    ContactoScreen:
+        name: "contacto"
 
     CuentaScreen:
         name: "cuenta"
@@ -18,8 +25,7 @@ ScreenManager:
     HomeScreen:
         name: "home"
 
-    LoginScreen:
-        name: "login"
+    
 
 
 
