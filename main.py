@@ -30,6 +30,10 @@ class ReservasScreen(Screen):
     def go_reservas(self):
         self.manager.current = "reservas"
 
+class CuentaScreen(Screen):
+    def go_cuenta(self):
+        self.manager.current = "cuenta"
+
 # class SettingsScreen(Screen):
 #     def go_home(self):
 #         self.manager.current = "home"
