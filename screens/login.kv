@@ -4,8 +4,9 @@
         #fondo del app
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 0.5)   # Fondo blanco opaco
+                rgba: (1, 1, 1, 0.4)   # Fondo blanco opaco
             Rectangle:
+                source: "assets/images/fondo.png"
                 pos: self.pos
                 size: self.size
         #barra superior
@@ -20,12 +21,12 @@
                 size_hint: 1, 1  
                 spacing: 0
                 padding: dp(30)
-                canvas.before:
-                    Color:
-                        rgba: (0.5, 0.5, 0.5, 1)  # fondo gris claro
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+                # canvas.before:
+                #     Color:
+                #         rgba: (0.5, 0.5, 0.5, 1)  # fondo gris claro
+                #     Rectangle:
+                #         pos: self.pos
+                #         size: self.size
                 #Login Account
                 BoxLayout:
                     orientation: "vertical"
@@ -70,13 +71,13 @@
                         orientation: "vertical"
                         size_hint_y: None
                         height: dp(30)   # altura más grande para que el TextInput entre bien
-                        canvas.before:
-                            Color:
-                                rgba: (0, 0, 0, 0.2)   # color de fondo
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [30]    
+                        # canvas.before:
+                        #     Color:
+                        #         rgba: (0, 0, 0, 0.2)   # color de fondo
+                        #     RoundedRectangle:
+                        #         pos: self.pos
+                        #         size: self.size
+                        #         radius: [30]    
                         TextInput:
                             text: "Enter your email"
                             font_name: "assets/fonts/RobotoSlab.ttf"
@@ -107,13 +108,13 @@
                         orientation: "vertical"
                         size_hint_y: None
                         height: dp(30)   # altura más grande para que el TextInput entre bien
-                        canvas.before:
-                            Color:
-                                rgba: (0, 0, 0, 0.2)   # color de fondo
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [30]    
+                        # canvas.before:
+                        #     Color:
+                        #         rgba: (0, 0, 0, 0.2)   # color de fondo
+                        #     RoundedRectangle:
+                        #         pos: self.pos
+                        #         size: self.size
+                        #         radius: [30]    
                         TextInput:
                             text: "Enter your password"
                             font_name: "assets/fonts/RobotoSlab.ttf"
@@ -132,12 +133,12 @@
                 #spacing: 0
                 size_hint: 1, 0.6  
                 orientation: "vertical"
-                canvas.before:
-                    Color:
-                        rgba: (0.8, 0.5, 0.5, 1)  # fondo rojizo
-                    Rectangle:
-                        pos: self.pos
-                        size: self.size
+                # canvas.before:
+                #     Color:
+                #         rgba: (0.8, 0.5, 0.5, 1)  # fondo rojizo
+                #     Rectangle:
+                #         pos: self.pos
+                        # size: self.size
                 # sign in
                 FloatLayout:
                     padding: dp(40)

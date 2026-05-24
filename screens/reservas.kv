@@ -4,20 +4,21 @@
         padding: dp(10) 
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 0.6)
+                rgba: (1, 1, 1, 0.4)
             Rectangle:
+                source: "assets/images/fondo.png"
                 pos: self.pos
                 size: self.size
         BoxLayout:
             size_hint: 1, None
             height: dp(55)
-            canvas.before:
-                Color: 
-                    rgba: (1, 0, 0, 0.5)
-                RoundedRectangle:
-                    pos: self.pos
-                    size: self.size
-                    radius: [5]
+            # canvas.before:
+            #     Color: 
+            #         rgba: (1, 0, 0, 0.5)
+            #     RoundedRectangle:
+            #         pos: self.pos
+            #         size: self.size
+            #         radius: [5]
             Label:
                 text: "RESERVAS"
 
@@ -26,12 +27,12 @@
             orientation: "vertical"
             spacing: dp(10)
             padding: dp(30), dp(30), dp(30),dp(0) 
-            canvas.before:
-                Color:
-                    rgba: (0, 0, 1, 0.5)
-                Rectangle:
-                    pos: self.pos
-                    size: self.size
+            # canvas.before:
+            #     Color:
+            #         rgba: (0, 0, 1, 0.5)
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
 
             #Conteiner de Rerservas
             BoxLayout:
@@ -219,40 +220,44 @@
             BoxLayout:
                 size_hint: 1,1
 
-            # nacegaciones
-            # Navegaciones
+            #Navegaciones
             BoxLayout:
                 orientation: "vertical"
                 size_hint: 1, None
-                height: dp(100)
-                padding: dp(50), dp(0), dp(50), dp(20)
+                height: dp(120)
+                padding: dp(40), dp(0), dp(40), dp(20)
                 # canvas.before:
                 #     Color:
                 #         rgba: (1, 0, 0, 0.5)   # Fondo Rojo
                 #     Rectangle:
                 #         pos: self.pos
                 #         size: self.size
-                        
+            
                 BoxLayout:
                     orientation: "horizontal"
-                    size_hint: 1, None
-                    spacing: dp(25)
-                    height: dp(50)
-                    # canvas.before:
-                    #     Color: 
-                    #         rgba: (1, 0, 1, 0.5)
-                    #     RoundedRectangle:
-                    #         pos: self.pos
-                    #         size: self.size
+                    size_hint: None, None
+                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    spacing: dp(30)
+                    height: dp(80)
+                    width: dp(300)
+                    padding: dp(20)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
                     
                     Button:
-                        text: "Home"
+                        text: "H"
                         on_press: root.go_home()
                         background_normal: ""
                         background_color: (0, 0, 0, 0)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
                         font_size: sp(14) 
-                        size_hint: 1, None
-                        height: dp(50)
+                        size_hint: None, None
+                        height: dp(40)
+                        width: dp(40)
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -262,29 +267,33 @@
                                 size: self.size
                                 radius: [5]                    
                     Button:
-                        text: "Reservas"
+                        text: "R"
                         on_press: root.go_reservas()
                         background_normal: ""
                         background_color: (0, 0, 0, 0)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
                         font_size: sp(14) 
-                        size_hint: 1, None
-                        height: dp(50)   
+                        size_hint: None, None
+                        height: dp(40) 
+                        width: dp(40)  
                         padding: dp(15)
                         canvas.before:
                             Color: 
-                                rgba: (1, 1, 1, 0.5)
+                                rgba: (1, 1, 1, 0.8)
                             RoundedRectangle:
                                 pos: self.pos
                                 size: self.size
                                 radius: [5]
                     Button:
+                        text: "C"
                         on_press: root.go_contacto()
                         background_normal: ""
                         background_color: (0, 0, 0, 0)
-                        text: "Contactos"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
                         font_size: sp(14) 
-                        size_hint: 1, None
-                        height: dp(50)
+                        size_hint: None, None
+                        height: dp(40)
+                        width: dp(40)  
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -294,13 +303,15 @@
                                 size: self.size
                                 radius: [5]
                     Button:
-                        text: "Cuenta"
+                        text: "A"
                         on_press: root.go_cuenta()
                         background_normal: ""
                         background_color: (0, 0, 0, 0)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
                         font_size: sp(14) 
-                        size_hint: 1, None
-                        height: dp(50)
+                        size_hint: None, None
+                        height: dp(40)
+                        width: dp(40)  
                         padding: dp(15)
                         canvas.before:
                             Color: 
@@ -309,3 +320,4 @@
                                 pos: self.pos
                                 size: self.size
                                 radius: [5]
+                                
