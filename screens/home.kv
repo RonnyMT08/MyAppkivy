@@ -9,9 +9,11 @@
         padding: dp(10) #no hay paddin
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 0.4)   # Fondo blanco opaco
+                #rgba: (0.18, 0.55, 0.25, 1)   # Fondo blanco opaco
+                #rgba: (0.6, 0.85, 0.6, 1)
+                rgba: (0.08, 0.15, 0.08, 1)
+
             Rectangle:
-                source: "assets/images/fondo.png"
                 pos: self.pos
                 size: self.size
 
@@ -45,18 +47,18 @@
                         size: self.size
                         radius: [5]
             Label:
-                text: "Ronny"
+                text: "RMT"
                 font_size: sp(18)
                 size_hint: 0.2 , 0
                 size_hint_y: None #tamaño del cuadro
                 height: dp(55)
                 canvas.before:
                     Color: 
-                        rgba: (1, 0, 1, 0.5)
+                        rgba: (1, 1, 1, 0.1)
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
-                        radius: [5]
+                        radius: [15]
         
         #Categorias
         BoxLayout:
@@ -156,11 +158,12 @@
                 padding: dp(15)
                 canvas.before:
                     Color: 
-                        rgba: (1, 1, 1, 0.5)
+                        rgba: (1, 1, 1, 0.7)
                     RoundedRectangle:
+                        source: "assets/images/mapa1.png"
                         pos: self.pos
                         size: self.size
-                        radius: [5]
+                        radius: [10]
             # Label:
             #     text: "Mapa 2"
             #     font_size: sp(24) #tamano de fuente
@@ -192,7 +195,7 @@
             orientation: "vertical"
             size_hint: 1, None
             height: dp(120)
-            padding: dp(40), dp(0), dp(40), dp(20)
+            padding: dp(20), dp(0), dp(20), dp(20)
             # canvas.before:
             #     Color:
             #         rgba: (1, 0, 0, 0.5)   # Fondo Rojo
@@ -200,13 +203,13 @@
             #         pos: self.pos
             #         size: self.size
                     
-            BoxLayout:
+            FloatLayout:
                 orientation: "horizontal"
-                size_hint: None, None
-                pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                spacing: dp(30)
-                height: dp(80)
-                width: dp(300)
+                size_hint: 1, None
+                #pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                #spacing: dp(35)
+                #height: dp(80)
+                #width: dp(300)
                 padding: dp(20)
                 canvas.before:
                     Color: 
@@ -214,15 +217,16 @@
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
+                        radius: [25]
                 
                 Button:
                     text: "H"
                     on_press: root.go_home()
                     background_normal: ""
                     background_color: (0, 0, 0, 0)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                    font_size: sp(14) 
                     size_hint: None, None
+                    pos_hint: {"center_x": 0.1, "center_y": 0.5}
+                    font_size: sp(14) 
                     height: dp(40)
                     width: dp(40)
                     padding: dp(15)
@@ -238,9 +242,9 @@
                     on_press: root.go_reservas()
                     background_normal: ""
                     background_color: (0, 0, 0, 0)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                    font_size: sp(14) 
                     size_hint: None, None
+                    pos_hint: {"center_x": 0.30, "center_y": 0.5}
+                    font_size: sp(14) 
                     height: dp(40) 
                     width: dp(40)  
                     padding: dp(15)
@@ -256,9 +260,9 @@
                     on_press: root.go_contacto()
                     background_normal: ""
                     background_color: (0, 0, 0, 0)
+                    size_hint: None, None
                     pos_hint: {"center_x": 0.5, "center_y": 0.5}
                     font_size: sp(14) 
-                    size_hint: None, None
                     height: dp(40)
                     width: dp(40)  
                     padding: dp(15)
@@ -274,9 +278,27 @@
                     on_press: root.go_cuenta()
                     background_normal: ""
                     background_color: (0, 0, 0, 0)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                    font_size: sp(14) 
                     size_hint: None, None
+                    pos_hint: {"center_x": 0.7, "center_y": 0.5}
+                    font_size: sp(14) 
+                    height: dp(40)
+                    width: dp(40)  
+                    padding: dp(15)
+                    canvas.before:
+                        Color: 
+                            rgba: (1, 1, 1, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [5]
+                Button:
+                    text: "E"
+                    on_press: root.go_cuenta()
+                    background_normal: ""
+                    background_color: (0, 0, 0, 0)
+                    size_hint: None, None
+                    pos_hint: {"center_x": 0.9, "center_y": 0.5}
+                    font_size: sp(14) 
                     height: dp(40)
                     width: dp(40)  
                     padding: dp(15)
