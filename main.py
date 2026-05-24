@@ -19,6 +19,11 @@ class LoginScreen(Screen):
     #     App.get_running_app().stop()
 
 class HomeScreen(Screen):
+    #Barra de Packs
+    def go_mapas(self):
+        self.manager.current = "mapas"
+
+    #Barra de manu
     def go_home(self):
         self.manager.current = "home"
     def go_reservas(self):
@@ -27,6 +32,10 @@ class HomeScreen(Screen):
         self.manager.current = "cuenta"
     def go_contacto(self):
         self.manager.current = "contacto"
+
+class MapasScreen(Screen):
+    def go_mapas(self):
+        self.manager.current = "mapas"
 
 class ReservasScreen(Screen):
     def go_reservas(self):
