@@ -1,89 +1,52 @@
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import ListProperty
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-from kivy.uix.screenmanager import Screen
+from kivy.uix.screenmanager import ScreenManager
 
-class LoginScreen(Screen):
-    def login_app(self, username, password):
-        if username.strip() and password.strip():
-            print("Se ingreso al home")
-            self.manager.current = "home"
-        else:
-            print("Por favor ingresa usuario y contraseña")
+from screens.homebase import HomeBase
+from screens.login.loginbase import LoginBase
+from screens.navbase import NavBase
 
-    # def create_user(self):
-    #     self.manager.current = "settings"
+from screens.cuenta import Cuenta
+from screens.contacto import Contacto
+from screens.reservas import Reservas
 
-    # def exit_app(self):
-    #     App.get_running_app().stop()
-
-class HomeScreen(Screen):
-    #Barra de Packs
-    def go_mapas(self):
-        self.manager.current = "mapas"
-
-    #Barra de manu
-    def go_home(self):
-        self.manager.current = "home"
-    def go_reservas(self):
-        self.manager.current = "reservas"
-    def go_cuenta(self):
-        self.manager.current = "cuenta"
-    def go_contacto(self):
-        self.manager.current = "contacto"
-
-class MapasScreen(Screen):
-    def go_mapas(self):
-        self.manager.current = "mapas"
-
-class ReservasScreen(Screen):
-    def go_reservas(self):
-        self.manager.current = "reservas"
-    def go_home(self):
-        self.manager.current = "home"
-    def go_cuenta(self):
-        self.manager.current = "cuenta"
-    def go_contacto(self):
-        self.manager.current = "contacto"
-
-class CuentaScreen(Screen):
-    def go_cuenta(self):
-        self.manager.current = "cuenta"
-    def go_home(self):
-        self.manager.current = "home"
-    def go_contacto(self):
-        self.manager.current = "contacto"
-    def go_reservas(self):
-        self.manager.current = "reservas"
-
-class ContactoScreen(Screen):
-    def go_contacto(self):
-        self.manager.current = "contacto"
-    def go_home(self):
-        self.manager.current = "home"
-    def go_reservas(self):
-        self.manager.current = "reservas"
-    def go_cuenta(self):
-        self.manager.current = "cuenta"
-
-# class SettingsScreen(Screen):
-#     def go_home(self):
-#         self.manager.current = "home"
-
-# class RoundedButton(Button):
-#     fill_color = ListProperty([0, 0, 0, 0.25])
-#     radius = ListProperty([20, 20, 20, 20])
-
-# class LoginButton(Button):
-#     fill_color = ListProperty([0, 1, 0, 0.8])
-#     radius = ListProperty([10, 10, 10, 10])
 
 class MyApp(App):
     def build(self):
         self.title = "My Kivy App"
         self.icon = "assets/images/icon.png"
-        return Builder.load_file("main.kv")
+
+        Builder.load_file("screens/login/loginbase.kv")
+        Builder.load_file("screens/login/login.kv")
+        Builder.load_file("screens/login/newuser.kv")
+        Builder.load_file("screens/login/password.kv")
+        
+        Builder.load_file("screens/homebase.kv")
+
+        Builder.load_file("screens/navbase.kv")
+
+        Builder.load_file("screens/mapas.kv")
+        Builder.load_file("screens/kits.kv")
+        Builder.load_file("screens/modos.kv")
+        Builder.load_file("screens/publica.kv")
+        Builder.load_file("screens/privada.kv")
+
+        Builder.load_file("screens/cuenta.kv")
+        Builder.load_file("screens/contacto.kv")
+        Builder.load_file("screens/reservas.kv")
+        #Builder.load_file("screens/salir.kv")
+
+        sm = ScreenManager()
+        sm.add_widget(LoginBase(name="loginbase"))
+        sm.add_widget(NavBase(name="navbase"))
+        sm.add_widget(HomeBase(name="homebase"))
+        sm.add_widget(Contacto(name="contacto"))
+        sm.add_widget(Reservas(name="reservas"))
+        sm.add_widget(Cuenta(name="cuenta"))
+        return sm
 
 if __name__ == "__main__":
     MyApp().run()

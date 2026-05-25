@@ -1,31 +1,19 @@
-<ContactoScreen>:
+<Contacto@Screen>:
     BoxLayout:
         orientation: "vertical"
         padding: dp(10) 
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 0.4)
+                rgba: (1, 1, 1, 0.2)
             Rectangle:
                 source: "assets/images/fondo.png"
                 pos: self.pos
                 size: self.size
-        BoxLayout:
-            size_hint: 1, None
-            height: dp(55)
-            # canvas.before:
-            #     Color: 
-            #         rgba: (1, 0, 0, 0.5)
-            #     RoundedRectangle:
-            #         pos: self.pos
-            #         size: self.size
-            #         radius: [5]
-            Label:
-                font_size: sp(20)
-                text: "CONTACTANOS"
+        
         #FONDO DE LA PAGINA
         BoxLayout:
             orientation: "vertical"
-            spacing: dp(10)
+            spacing: dp(20)
             padding: dp(30), dp(30), dp(30),dp(0) 
             # canvas.before:
             #     Color:
@@ -40,7 +28,6 @@
                 size_hint: 1, None
                 height: dp(200)
                 padding: dp(15) #
-                spacing: 0 #
                 canvas.before:
                     Color:
                         rgba: (1, 1, 1, 0.5)
@@ -50,6 +37,7 @@
                         radius: [10] 
 
                 BoxLayout:
+                    spacing: dp(10) #
                     orientation: "vertical"
                     size_hint: 1, 1
                     # canvas.before:
@@ -59,133 +47,73 @@
                     #         pos: self.pos
                     #         size: self.size
                     #         radius: [10]
-                    Label:
-                        padding: dp(20)
-                        halign: "center" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
+                    Button:
                         text: "Email"
-                    Label:
                         padding: dp(20)
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0) #transparente
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.47, 0.2, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
                         halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Instagram"  
-                    Label:
+                        on_press: root.open_email() # Llama a la función para abrir el correo electrónico
+                    Button:
+                        text: "Instragram"
                         padding: dp(20)
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0) #transparente
+                        canvas.before:
+                            Color:
+                                rgba: (0.8, 0.2, 0.5, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
                         halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Facebook" 
-                    Label:
+                        on_press: root.open_instagram() # Llama a la función para abrir Instagram
+                    Button:
+                        text: "Facebook"
                         padding: dp(20)
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0) #transparente
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.2, 0.8, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
                         halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Whatsapp" 
-                      
+                        on_press: root.open_facebook() # Llama a la función para abrir Facebook
+                    Button:
+                        text: "Whatsapp"
+                        padding: dp(20)
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0) #transparente
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.47, 0.2, 1)
+                                #rgba: (0.25, 0.65, 0.35, 1)   # color de fondo
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
+                        halign: "center" #alinear texto   
+                        valign: "middle" #alinear texto
+                        text_size: self.size #para alinear el texto
+                        on_press: root.open_whatsapp() # Llama a la función para abrir Whatsapp
 
-            # BoxLayout:
-            #     size_hint: 1,1
-
-            # Navegaciones
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, None
-                height: dp(120)
-                padding: dp(40), dp(0), dp(40), dp(20)
-                # canvas.before:
-                #     Color:
-                #         rgba: (1, 0, 0, 0.5)   # Fondo Rojo
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
-            
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                    spacing: dp(30)
-                    height: dp(80)
-                    width: dp(300)
-                    padding: dp(20)
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        RoundedRectangle:
-                            pos: self.pos
-                            size: self.size
                     
-                    Button:
-                        text: "H"
-                        on_press: root.go_home()
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0)
-                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                        font_size: sp(14) 
-                        size_hint: None, None
-                        height: dp(40)
-                        width: dp(40)
-                        padding: dp(15)
-                        canvas.before:
-                            Color: 
-                                rgba: (1, 1, 1, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [5]                    
-                    Button:
-                        text: "R"
-                        on_press: root.go_reservas()
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0)
-                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                        font_size: sp(14) 
-                        size_hint: None, None
-                        height: dp(40) 
-                        width: dp(40)  
-                        padding: dp(15)
-                        canvas.before:
-                            Color: 
-                                rgba: (1, 1, 1, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [5]
-                    Button:
-                        text: "C"
-                        on_press: root.go_contacto()
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0)
-                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                        font_size: sp(14) 
-                        size_hint: None, None
-                        height: dp(40)
-                        width: dp(40)  
-                        padding: dp(15)
-                        canvas.before:
-                            Color: 
-                                rgba: (1, 1, 1, 0.8)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [5]
-                    Button:
-                        text: "A"
-                        on_press: root.go_cuenta()
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0)
-                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                        font_size: sp(14) 
-                        size_hint: None, None
-                        height: dp(40)
-                        width: dp(40)  
-                        padding: dp(15)
-                        canvas.before:
-                            Color: 
-                                rgba: (1, 1, 1, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [5]
+
+            
                                 
