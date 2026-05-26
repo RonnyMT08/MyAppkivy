@@ -40,7 +40,7 @@
                 BoxLayout:
                     orientation: "horizontal"
                     size_hint: 1, None
-                    height: dp(55)
+                    height: dp(35)
                     padding: 0 #
                     spacing: 0 #
                     # canvas.before:
@@ -51,77 +51,118 @@
                     #         size: self.size
                     #         radius: [10]  
                     Label:
-                        padding: dp(15)
+                        text: "Febrero 2026 5:00 PM"
+                        padding: dp(15), dp(0)
                         size_hint: 1, None
-                        height: dp(55)
+                        height: dp(35)
                         halign: "left" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Febrero 2026 5:00 PM"
-                    Label:
-                        padding: dp(15)
-                        height: dp(55)
-                        size_hint: 1, None
-                        text: "confirmado XXX"
-                        halign: "right" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, 1
-                    BoxLayout:
-
-                        canvas.before:
-                            Color:
-                                rgba: (0, 1, 0, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        Label:
-                            text: "imagen"
-                    BoxLayout:
-                        orientation: "vertical"
-                        size_hint: 1, 1
+                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
                         # canvas.before:
                         #     Color:
-                        #         rgba: (1, 1, 0, 0.5)
+                        #         rgba: (1, 1, 1, 0.5)
                         #     RoundedRectangle:
                         #         pos: self.pos
                         #         size: self.size
-                        #         radius: [10]
+                        #         radius: [10]  
+                    Label:
+                        text: "120.000 $"
+                        padding: dp(15), dp(0)
+                        height: dp(40)
+                        size_hint: 1, None
+                        halign: "right" #alinear texto   
+                        valign: "middle" #alinear texto
+                        text_size: self.size #para alinear el texto
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        font_size: sp(30)
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint: 1, 1                        
+                    BoxLayout:
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0, 0, 0)
+                            RoundedRectangle:
+                                source: "assets/images/mapa1.png"
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
+                        Image:
+                            source: "assets/images/mapa1.png"
+                            allow_stretch: True
+                            keep_ratio: True
+                            size_hint_y: None
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        size_hint: 1, 1
+                        
                         Label:
-                            padding: dp(20)
+                            text: "Todos vs Todos como estan aqui va todo para la reserva creo yo\n 2 \n 3\n 4\n 5"
+                            size_hint: 1, 1
+                            padding: dp(20), dp(0)
                             halign: "left" #alinear texto   
                             valign: "middle" #alinear texto
                             text_size: self.size #para alinear el texto
-                            text: "Todos vs Todos"
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Ubicacion"        
+                            font_size: sp(12)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1, 1, 0, 0.5)
+                            #     RoundedRectangle:
+                            #         pos: self.pos
+                            #         size: self.size
+                            #         radius: [10]
+                        # Label:
+                        #     text: "Ubicacion"
+                        #     padding: dp(20)
+                        #     halign: "left" #alinear texto   
+                        #     valign: "middle" #alinear texto
+                        #     text_size: self.size #para alinear el texto
+                        #     font_size: dp(14)
+                        #     font_name: "assets/fonts/RobotoSlab-Regular.ttf"        
                 BoxLayout:
                     orientation: "horizontal"
                     size_hint: 1, None
                     height: dp(50)
-                    Label:
+                    padding: dp(15), dp(5)
+                    spacing: dp(15)
+                    Button:
                         text: "Cancelar"
-                    Label:
-                        text: "Confirmar"
+                        background_nomal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        canvas.before:
+                            Color:
+                                rgba: (0.5, 0, 0, 0.8)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10] 
+                    Button:
+                        text: "Editar"
+                        background_nomal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        canvas.before:
+                            Color:
+                                rgba: (0, 0.5, 0, 0.8)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
 
-            #Conteiner de Rerservas
+            # agregar mas reservas
             BoxLayout:
                 orientation: "vertical"
                 size_hint: 1, None
-                height: dp(200)
+                height: dp(55)
                 padding: dp(15), dp(0) #
                 spacing: 0 #
                 canvas.before:
                     Color:
-                        rgba: (1, 1, 1, 0.5)
+                        rgba: (0, 0.5, 0, 0.8)
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
@@ -141,68 +182,17 @@
                     #         pos: self.pos
                     #         size: self.size
                     #         radius: [10]  
-                    Label:
+                    Button:
+                        text: "Crear nueva reserva +"
+                        background_nomal: ""
+                        background_color: (0, 0, 0, 0)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
                         padding: dp(15)
                         size_hint: 1, None
                         height: dp(55)
-                        halign: "left" #alinear texto   
+                        halign: "center" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Febrero 2026 5:00 PM"
-                    Label:
-                        padding: dp(15)
-                        height: dp(55)
-                        size_hint: 1, None
-                        text: "confirmado XXX"
-                        halign: "right" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, 1
-                    BoxLayout:
-
-                        canvas.before:
-                            Color:
-                                rgba: (0, 1, 0, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        Label:
-                            text: "imagen"
-                    BoxLayout:
-                        orientation: "vertical"
-                        size_hint: 1, 1
-                        # canvas.before:
-                        #     Color:
-                        #         rgba: (1, 1, 0, 0.5)
-                        #     RoundedRectangle:
-                        #         pos: self.pos
-                        #         size: self.size
-                        #         radius: [10]
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Todos vs Todos"
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Ubicacion"        
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, None
-                    height: dp(50)
-                    Label:
-                        text: "Cancelar"
-                    Label:
-                        text: "Confirmar"
-            
-
+                   
             BoxLayout:
                 size_hint: 1,1

@@ -225,6 +225,8 @@
                 name: "contacto"
             Cuenta:
                 name: "cuenta"
+            Home: 
+                name: "home"
             
         ###############
 
@@ -307,7 +309,7 @@
 
                 Button:
                     id: btn_home
-                    on_press: sm.current = "mapas"; root.cambiar_color_nav(btn_home, lb_home)
+                    on_press: sm.current = "home"; root.cambiar_color_nav(btn_home, lb_home)
                     on_release: root.reset_color_nave(btn_reservas, lb_reservas); root.reset_color_nave(btn_contacto, lb_contacto); root.reset_color_nave(btn_cuenta, lb_cuenta); root.reset_color_nave(btn_login, lb_login)
                     background_normal: ""
                     background_color: (0, 0, 0, 0)

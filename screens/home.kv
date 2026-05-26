@@ -1,457 +1,228 @@
 <Home@Screen>:
-    # contenedor de fondo
+    # Modos de juego
     BoxLayout:
         orientation: "vertical"
         size_hint: 1, 1
-        spacing: 0
-        padding: dp(10) #no hay paddin
-        canvas.before:
-            Color:
-                #rgba: (0.18, 0.55, 0.25, 1)   # Fondo blanco opaco
-                #rgba: (0.6, 0.85, 0.6, 1)
-                rgba: (0.08, 0.15, 0.08, 1)
-
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
-        #contenedor de del titulo y el nombre
-        BoxLayout:
-            orientation: "horizontal"
-            spacing: dp(20)
-            padding: dp(10)
-            size_hint: 1, None
-            height: dp(65)
-            # canvas.before:
-            #     Color:
-            #         rgba: (1, 0, 0, 0.5)   # Fondo rojo
-            #     Rectangle:
-            #         pos: self.pos
-            #         size: self.size
-            Label:
-                text: "Air soft"
-                font_size: sp(30) #tamano de fuente
-                halign: "left" #alinear texto
-                valign: "middle" #alinear texto
-                text_size: self.size #para alinear el texto
-                font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                size_hint_y: None #tamaño del cuadro
-                height: dp(55)   # altura fija
-                padding: dp(15)
-                # canvas.before:
-                #     Color: 
-                #         rgba: (1, 1, 1, 0.5)
-                #     RoundedRectangle:
-                #         pos: self.pos
-                #         size: self.size
-                #         radius: [5]
-            Label:
-                text: "RMT"
-                font_size: sp(18)
-                size_hint: 0.2 , 0
-                size_hint_y: None #tamaño del cuadro
-                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                height: dp(55)
-                canvas.before:
-                    Color: 
-                        rgba: (1, 1, 1, 0.1)
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [20]
-        # SUBTITULO
-        BoxLayout:
-            size_hint: 1, None
-            padding: dp(30), dp(0), dp(0), dp(0)
-            height: dp(20)
+        spacing: dp(0)
+        padding: dp(10), dp(20), dp(10), dp(20)
+        # canvas.before:
+        #     Color:
+        #         rgba: (0, 0, 0, 0)
+        #     Rectangle:
+        #         pos: self.pos
+        #         size: self.size
+        
+        Label:
+            text: "Juega Ya!!"
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left" #alinear texto   
+            valign: "middle" #alinear texto
+            text_size: self.size #para alinear el texto
+            color: (0, 1, 1, 0.5)
+            font_size: sp(35) #tamano de fuente
+            size_hint: 1, None #tamaño del cuadro
+            height: dp(40)
+            padding: dp(0)
             # canvas.before:
             #     Color: 
-            #         rgba: (1, 1, 1, 0.5)
-            #     RoundedRectangle:
-            #         pos: self.pos
-            #         size: self.size
-            #         radius: [5]
-            Label:
-                text: "Reserva tu pack"
-                size_hint: 1, None
-                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                height: dp(30)
-                halign: "left" #alinear texto
-                valign: "middle" #alinear texto
-                text_size: self.size #para alinear el texto
-                # canvas.before:
-                #     Color:
-                #         rgba: (1, 1, 0, 0.5)   # Fondo Amarillo
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
-
-        ############333
-        ## categorias
-        BoxLayout:
-            orientation: "vertical"
-            size_hint: 1, None
-            height: dp(70)
-
-            FloatLayout:
-                Button:
-                    #text: "Mapas"
-                    on_press: root.go_mapas()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.1, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30) 
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/mapas.png"
-                            pos: self.pos
-                            size: self.size
-                    
-                Label:
-                    text: "Mapas"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.1, "center_y": 0.2}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                    color: (1, 1, 1, 0.5)
-                    height: dp(30)
-                    width: dp(30)
-                    # canvas.before:
-                    #     Color: 
-                    #         rgba: (1, 1, 1, 0.4)
-                    #     Rectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                        
-                Button:
-                    #text: "kits"
-                    on_press: root.go_reservas()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.30, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30) 
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/kits.png"
-                            pos: self.pos
-                            size: self.size
-                Label:
-                    text: "Kits"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.3, "center_y": 0.2}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    color: (1, 1, 1, 0.5)
-                    height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "Modos"
-                    on_press: root.go_contacto()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.5, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/modos.png"
-                            pos: self.pos
-                            size: self.size
-                Label:
-                    text: "Modos"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.5, "center_y": 0.2}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    color: (1, 1, 1, 0.5)
-                    height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "publica"
-                    on_press: root.go_cuenta()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.7, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/publica.png"
-                            pos: self.pos
-                            size: self.size
-                Label:
-                    text: "publica"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.7, "center_y": 0.2}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    color: (1, 1, 1, 0.5)
-                    height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "privada"
-                    on_press: root.go_login()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.9, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/privada.png"
-                            pos: self.pos
-                            size: self.size
-                Label:
-                    text: "privada"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.9, "center_y": 0.2}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    color: (1, 1, 1, 0.5)
-                    height: dp(30)
-                    width: dp(30)
-
-        
-        # Modos de juego
-        BoxLayout:
-            orientation: "horizontal"
-            size_hint: 1, 0.5 
-            spacing: dp(20)
-            padding: dp(10), dp(20), dp(10), dp(20)
-            # canvas.before:
-            #     Color:
-            #         rgba: (0, 1, 1, 0.5)   # Fondo Azul
+            #         rgba: (0, 1, 1, 0.5)
             #     Rectangle:
             #         pos: self.pos
             #         size: self.size
+        Label:
+            text: "Desafia a tus limites"
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left" #alinear texto   
+            valign: "middle" #alinear texto
+            text_size: self.size #para alinear el texto
+            color: (0,0,0,1)
+            font_size: sp(35) #tamano de fuente
+            size_hint: 1, None #tamaño del cuadro
+            height: dp(40)
+            padding: dp(0)
+            # canvas.before:
+            #     Color: 
+            #         rgba: (1, 1, 1, 0.7)
+            #     Rectangle:
+            #         pos: self.pos
+            #         size: self.size
+        Label:
+            text: "Ofrecemos"
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left" #alinear texto   
+            valign: "middle" #alinear texto
+            text_size: self.size #para alinear el texto
+            font_size: sp(16) #tamano de fuente
+            size_hint: 1, None #tamaño del cuadro
+            height: dp(40)
+            padding: dp(0)
+            
+        BoxLayout:
+            size_hint: None, None
+            size: dp(400), dp(200)
+            spacing: dp(0)
+            canvas.before:
+                Color: 
+                    rgba: (1, 1, 0.5, 0.7)
+                RoundedRectangle:
+                    pos: self.pos
+                    size: self.size
+                    radius: [10]
             Label:
-                text: "Mapa 1"
+                text: "uniforme, armas, cascos"
                 font_size: sp(24) #tamano de fuente
-                size_hint:1, 1 #tamaño del cuadro
+                size_hint: 1, None #tamaño del cuadro
+                height: dp(40)
                 padding: dp(0)
                 canvas.before:
                     Color: 
-                        rgba: (1, 1, 1, 0.7)
+                        rgba: (1, 0.5, 1, 0.7)
                     RoundedRectangle:
-                        source: "assets/images/mapa1.png"
                         pos: self.pos
                         size: self.size
                         radius: [10]
-            # Label:
-            #     text: "Mapa 2"
-            #     font_size: sp(24) #tamano de fuente
-            #     size_hint: 1, 1
+        Label:
+            text: "Reseñas"
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left" #alinear texto   
+            valign: "middle" #alinear texto
+            text_size: self.size #para alinear el texto
+            font_size: sp(16) #tamano de fuente
+            size_hint: 1, None #tamaño del cuadro
+            height: dp(40)
+            padding: dp(0)
 
-            #     padding: dp(15)
-            #     canvas.before:
-            #         Color: 
-            #             rgba: (1, 1, 1, 0.5)
-            #         RoundedRectangle:
-            #             pos: self.pos
-            #             size: self.size
-            #             radius: [5]
-            # Label:
-            #     text: "Mapa 3"
-            #     font_size: sp(24) #tamano de fuente
-            #     size_hint: 1, 0.8 
-            #     padding: dp(15)
-            #     canvas.before:
-            #         Color: 
-            #             rgba: (1, 1, 1, 0.5)
-            #         RoundedRectangle:
-            #             pos: self.pos
-            #             size: self.size
-            #             radius: [5]
-        
-        # Navegaciones
+        # RESEÑAS DE USUARIOS
         BoxLayout:
-            orientation: "vertical"
+            orientation: "horizontal"
             size_hint: 1, None
-            height: dp(120)
-            padding: dp(20), dp(0), dp(20), dp(20)
+            height: dp(200)
+            spacing: dp(20)
+            #pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+            # size: dp(400), dp(200)
             # canvas.before:
-            #     Color:
-            #         rgba: (1, 0, 0, 0.5)   # Fondo Rojo
-            #     Rectangle:
+            #     Color: 
+            #         rgba: (0, 1, 0.2, 0.7)
+            #     RoundedRectangle:
             #         pos: self.pos
             #         size: self.size
-                    
-            FloatLayout:
-                orientation: "horizontal"
-                size_hint: 1, None
-                #pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                #spacing: dp(35)
-                height: dp(80)
-                #width: dp(300)
-                padding: dp(20)
+            #         radius: [10]
+            
+            #USUAIO 1
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: None, None
+                size: dp(170), dp(200)
                 canvas.before:
                     Color: 
-                        rgba: (1, 1, 1, 0.6)
+                        rgba: (0, 0.75, 0.2, 0.7)
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
-                        radius: [25]
+                        radius: [10]
                 
-                Button:
-                    #text: "H"
-                    on_press: root.go_home()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.1, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.9)
-                        Rectangle:
-                            source: "assets/icons/home-green.png"
-                            pos: self.pos
-                            size: self.size
                 Label:
-                    text: "Home"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.1, "center_y": 0.3}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                    color: (0.08, 0.15, 0.08, 0.8)
-                    height: dp(30)
-                    width: dp(30)
+                    text: "Una de las experiencias mas increibles, indescriptibles y lo recomendo demasiado mucho"
+                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                    halign: "left" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(14) #tamano de fuente
+                    padding: dp(10), dp(0) 
                     # canvas.before:
                     #     Color: 
-                    #         rgba: (1, 1, 1, 0.4)
-                    #     Rectangle:
+                    #         rgba: (0.8, 0.2, 0.2, 0.7)
+                    #     RoundedRectangle:
                     #         pos: self.pos
                     #         size: self.size
-                        
-                Button:
-                    #text: "R"
-                    on_press: root.go_reservas()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.30, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30) 
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/reserve-white.png"
-                            pos: self.pos
-                            size: self.size
+                    #         radius: [10]
                 Label:
-                    text: "Reserves"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.3, "center_y": 0.3}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                    text: "Lucas Anonimo ##"
+                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                    halign: "center" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(18) #tamano de fuente
+                    size_hint: 1, None
                     height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "C"
-                    on_press: root.go_contacto()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.5, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/contact-white.png"
-                            pos: self.pos
-                            size: self.size
+            #USUAIO 2
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: None, None
+                size: dp(170), dp(200)
+                canvas.before:
+                    Color: 
+                        rgba: (0, 0.75, 0.2, 0.7)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
                 Label:
-                    text: "Contact"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.5, "center_y": 0.3}
-                    font_size: sp(14) 
+                    text: "Una de las experiencias mas increibles, indescriptibles y lo recomendo demasiado mucho"
                     font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "A"
-                    on_press: root.go_cuenta()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.7, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/profile-white.png"
-                            pos: self.pos
-                            size: self.size
+                    halign: "left" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(14) #tamano de fuente
+                    padding: dp(10), dp(0) 
+                    # canvas.before:
+                    #     Color: 
+                    #         rgba: (0.8, 0.2, 0.2, 0.7)
+                    #     RoundedRectangle:
+                    #         pos: self.pos
+                    #         size: self.size
+                    #         radius: [10]
                 Label:
-                    text: "Account"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.7, "center_y": 0.3}
-                    font_size: sp(14) 
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                    text: "Lucas Anonimo ##"
+                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                    halign: "center" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(18) #tamano de fuente
+                    size_hint: 1, None
                     height: dp(30)
-                    width: dp(30)
-
-                Button:
-                    #text: "E"
-                    on_press: root.go_login()
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.9, "center_y": 0.6}
-                    font_size: sp(14) 
-                    height: dp(30)
-                    width: dp(30)  
-                    canvas.before:
-                        Color: 
-                            rgba: (1, 1, 1, 0.5)
-                        Rectangle:
-                            source: "assets/icons/exit.png"
-                            pos: self.pos
-                            size: self.size
+            #USUAIO 3
+            BoxLayout:
+                orientation: "vertical"
+                size_hint: None, None
+                size: dp(170), dp(200)
+                canvas.before:
+                    Color: 
+                        rgba: (0, 0.75, 0.2, 0.7)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [10]
+                
                 Label:
-                    text: "Exit"
-                    size_hint: None, None
-                    pos_hint: {"center_x": 0.9, "center_y": 0.3}
-                    font_size: sp(14) 
+                    text: "Una de las experiencias mas increibles, indescriptibles y lo recomendo demasiado mucho"
                     font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                    halign: "left" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(14) #tamano de fuente
+                    padding: dp(10), dp(0) 
+                    # canvas.before:
+                    #     Color: 
+                    #         rgba: (0.8, 0.2, 0.2, 0.7)
+                    #     RoundedRectangle:
+                    #         pos: self.pos
+                    #         size: self.size
+                    #         radius: [10]
+                Label:
+                    text: "Lucas Anonimo ##"
+                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                    halign: "center" #alinear texto   
+                    valign: "middle" #alinear texto
+                    text_size: self.size #para alinear el texto
+                    font_size: sp(18) #tamano de fuente
+                    size_hint: 1, None
                     height: dp(30)
-                    width: dp(30)
 
-                            
+
+        BoxLayout: 
+            size_hint: 1, 1
+        # Navegaciones
+      

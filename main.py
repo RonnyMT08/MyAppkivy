@@ -12,6 +12,7 @@ from screens.navbase import NavBase
 from screens.cuenta import Cuenta
 from screens.contacto import Contacto
 from screens.reservas import Reservas
+from screens.home import Home
 
 
 class MyApp(App):
@@ -37,12 +38,13 @@ class MyApp(App):
         Builder.load_file("screens/cuenta.kv")
         Builder.load_file("screens/contacto.kv")
         Builder.load_file("screens/reservas.kv")
-        #Builder.load_file("screens/salir.kv")
+        Builder.load_file("screens/home.kv")
 
         sm = ScreenManager()
         sm.add_widget(LoginBase(name="loginbase"))
         sm.add_widget(NavBase(name="navbase"))
         sm.add_widget(HomeBase(name="homebase"))
+        sm.add_widget(Home(name="home"))
         sm.add_widget(Contacto(name="contacto"))
         sm.add_widget(Reservas(name="reservas"))
         sm.add_widget(Cuenta(name="cuenta"))

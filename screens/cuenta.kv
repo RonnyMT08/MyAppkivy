@@ -1,7 +1,7 @@
 <Cuenta@Screen>:
     BoxLayout:
         orientation: "vertical"
-        padding: dp(10) 
+        padding: dp(0) 
         canvas.before:
             Color:
                 rgba: (1, 1, 1, 0.4)
@@ -14,7 +14,7 @@
         BoxLayout:
             orientation: "vertical"
             spacing: dp(10)
-            padding: dp(30), dp(30), dp(30),dp(0) 
+            padding: dp(10)
             # canvas.before:
             #     Color:
             #         rgba: (0, 0, 1, 0.5)
@@ -22,11 +22,11 @@
             #         pos: self.pos
             #         size: self.size
 
-            #Conteiner de CUENTA
+            #Conteiner perfil
             BoxLayout:
                 orientation: "vertical"
                 size_hint: 1, None
-                height: dp(200)
+                height: dp(300)
                 padding: dp(15) #
                 spacing: 0 #
                 canvas.before:
@@ -41,7 +41,6 @@
                     orientation: "horizontal"
                     size_hint: 1, 1
                     BoxLayout:
-
                         canvas.before:
                             Color:
                                 rgba: (0, 1, 0, 0.5)
@@ -63,39 +62,55 @@
                         #         size: self.size
                         #         radius: [10]
                         Label:
-                            padding: dp(20)
+                            padding: dp(20), dp(0)
                             halign: "left" #alinear texto   
                             valign: "middle" #alinear texto
                             text_size: self.size #para alinear el texto
-                            text: "Nombre: Ronny Mamani Torrez"
-                        Label:
-                            padding: dp(20)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Email: ronny@gmailc.com"        
+                            text: "Ronis123 \nRonny Mamani Torrez \n ronny@gmail.com\n masculino \n10684277 \n Acerca de mi: holasasa"
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            font_size: dp(14)
+                            # canvas.before:
+                            #     Color:
+                            #         rgba: (1, 1, 0, 0.5)
+                            #     RoundedRectangle:
+                            #         pos: self.pos
+                            #         size: self.size
+                            #         radius: [10]
+                        Button:
+                            text: "editar"
+                            size_hint: None, None
+                            size: dp(100), dp(35)
+                            pos_hint: {"center_x":0.5, "center_y":0.5}
+                            background_normal: ""
+                            background_color: (0, 0, 0, 0)
+                            canvas.before:
+                                Color:
+                                    rgba: (0, 0.5, 0, 0.8)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [10]
+                    
 
             #Conteiner de Estadisticas
             BoxLayout:
                 orientation: "vertical"
-                size_hint: 1, 1
-                height: dp(200)
-                padding: dp(15), dp(0) #
+                size_hint: 1, None
+                height: dp(150) ##### SE MODIFICA CON LA CANTIDAD DE JUGADAS
+                padding: dp(15) #
                 spacing: 0 #
                 canvas.before:
                     Color:
-                        rgba: (1, 1, 1, 0.5)
+                        rgba: (0, 0.5, 0, 0.8)
                     RoundedRectangle:
                         pos: self.pos
                         size: self.size
                         radius: [10] 
 
-                #Fecha y confirmacion 
                 BoxLayout:
-                    orientation: "horizontal"
                     size_hint: 1, None
                     height: dp(55)
-                    padding: 0 #
+                    padding: dp(0), dp(0), dp(10), dp(10) 
                     spacing: 0 #
                     # canvas.before:
                     #     Color:
@@ -105,56 +120,35 @@
                     #         size: self.size
                     #         radius: [10]  
                     Label:
+                        text: "Mi historial de jugadas"
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
                         padding: dp(15)
                         size_hint: 1, None
                         height: dp(55)
                         font_size: sp(20)
-                        text: "Mi historial de jugadas"
 
                 BoxLayout:
                     orientation: "vertical"
                     size_hint: 1, 1
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (1, 1, 0, 0.5)
-                    #     RoundedRectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                    #         radius: [10]
+                    padding: dp(0), dp(0), dp(10), dp(0) 
+                    canvas.before:
+                        Color:
+                            rgba: (0, 0, 0, 0.5)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
                     Label:
+                        text: "Todos vs Todos: 2025: Victoria \nCaptura la bandera: 2024: Derrota"
+                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
                         padding: dp(20), dp(0)
                         size_hint: 1, None 
                         height: dp(55)
                         halign: "left" #alinear texto   
                         valign: "middle" #alinear texto
                         text_size: self.size #para alinear el texto
-                        text: "Todos vs Todos"
-                    Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
-                    Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
-                    Label:
-                        size_hint: 1, None 
-                        padding: dp(20), dp(0)
-                        height: dp(55)
-                        halign: "left" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        text: "Ubicacion" 
 
-                    BoxLayout:
-                        size_hint: 1,1           
+            BoxLayout:
+                size_hint: 1,1           
 
             
