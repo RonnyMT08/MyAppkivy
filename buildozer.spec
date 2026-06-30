@@ -1,6 +1,7 @@
 [app]
 # Nombre de la aplicación
-title = MiAppKivy
+title = Air-Soft
+
 # Nombre del paquete (único)
 package.name = miappkivy
 package.domain = org.example

@@ -9,10 +9,10 @@ from screens.homebase import HomeBase
 from screens.login.loginbase import LoginBase
 from screens.navbase import NavBase
 
-from screens.cuenta import Cuenta
+from screens.home import Home
 from screens.contacto import Contacto
 from screens.reservas import Reservas
-from screens.home import Home
+from screens.cuenta import Cuenta
 
 
 class MyApp(App):
