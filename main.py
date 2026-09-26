@@ -1,18 +1,51 @@
+import os
+import glob
+
+from kivy.config import Config
+Config.set('kivy', 'clipboard', 'null')  # Evita errores de xclip/xsel en Linux
+
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.properties import ListProperty
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
 from kivy.uix.screenmanager import ScreenManager
 
-from screens.homebase import HomeBase
-from screens.login.loginbase import LoginBase
-from screens.navbase import NavBase
+# Importar todas las vistas
+from views.login import LoginView
+from views.homebase import HomeBaseView
+from views.navbase import NavBaseView
+from views.home import HomeView
+from views.contacto import ContactoView
+from views.reservas import ReservasView
+from views.cuenta import CuentaView
+from views.mapas import MapasView
+from views.kits import KitsView
+from views.modos import ModosView
+from views.publica import PublicaView
+from views.privada import PrivadaView
 
-from screens.home import Home
-from screens.contacto import Contacto
-from screens.reservas import Reservas
-from screens.cuenta import Cuenta
+
+def load_kv_files(directory="views"):
+    """Carga automáticamente todos los archivos .kv del directorio especificado."""
+    kv_files = glob.glob(os.path.join(directory, "*.kv"))
+    for kv_file in sorted(kv_files):
+        Builder.load_file(kv_file)
+        print(f"Cargado: {kv_file}")
+
+
+# Registro de vistas: (nombre_en_screenmanager, ClaseVista)
+VIEWS = [
+    ("login",     LoginView),
+    ("navbase",   NavBaseView),
+    ("homebase",  HomeBaseView),
+    ("home",      HomeView),
+    ("contacto",  ContactoView),
+    ("reservas",  ReservasView),
+    ("cuenta",    CuentaView),
+    ("mapas",     MapasView),
+    ("kits",      KitsView),
+    ("modos",     ModosView),
+    ("publica",   PublicaView),
+    ("privada",   PrivadaView),
+]
 
 
 class MyApp(App):
@@ -20,35 +53,14 @@ class MyApp(App):
         self.title = "My Kivy App"
         self.icon = "assets/images/icon.png"
 
-        Builder.load_file("screens/login/loginbase.kv")
-        Builder.load_file("screens/login/login.kv")
-        Builder.load_file("screens/login/newuser.kv")
-        Builder.load_file("screens/login/password.kv")
-        
-        Builder.load_file("screens/homebase.kv")
-
-        Builder.load_file("screens/navbase.kv")
-
-        Builder.load_file("screens/mapas.kv")
-        Builder.load_file("screens/kits.kv")
-        Builder.load_file("screens/modos.kv")
-        Builder.load_file("screens/publica.kv")
-        Builder.load_file("screens/privada.kv")
-
-        Builder.load_file("screens/cuenta.kv")
-        Builder.load_file("screens/contacto.kv")
-        Builder.load_file("screens/reservas.kv")
-        Builder.load_file("screens/home.kv")
+        # Cargar todos los archivos .kv automáticamente
+        load_kv_files("views")
 
         sm = ScreenManager()
-        sm.add_widget(LoginBase(name="loginbase"))
-        sm.add_widget(NavBase(name="navbase"))
-        sm.add_widget(HomeBase(name="homebase"))
-        sm.add_widget(Home(name="home"))
-        sm.add_widget(Contacto(name="contacto"))
-        sm.add_widget(Reservas(name="reservas"))
-        sm.add_widget(Cuenta(name="cuenta"))
+        for name, view_class in VIEWS:
+            sm.add_widget(view_class(name=name))
         return sm
+
 
 if __name__ == "__main__":
     MyApp().run()

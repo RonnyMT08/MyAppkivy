@@ -1,6 +1,6 @@
 from kivy.uix.screenmanager import Screen
 
-class Contacto(Screen):
+class ContactoView(Screen):
     def open_instagram(self):
         import webbrowser
         webbrowser.open("https://www.instagram.com/tu_usuario/")  # Reemplaza con tu URL de Instagram

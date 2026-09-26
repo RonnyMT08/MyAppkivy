@@ -1,6 +1,4 @@
 from kivy.uix.screenmanager import Screen
 
-class Reservas(Screen):
+class PublicaView(Screen):
     pass
-
-

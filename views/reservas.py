@@ -1,6 +1,6 @@
 from kivy.uix.screenmanager import Screen
 
-class Cuenta(Screen):
+class ReservasView(Screen):
     pass
 
 

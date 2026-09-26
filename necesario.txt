@@ -11,7 +11,7 @@ El proyecto tiene la estructura básica para generar una app Android descargable
    - Si usas más librerías en tiempo de ejecución (requests, Plyer, etc.), agrégalas aquí.
 
 3. Archivos y recursos
-   - `main.kv` y los archivos `screens/*.kv` están incluidos y deberían empaquetarse bien.
+   - Los archivos `views/*.kv` están incluidos y se cargan automáticamente desde `main.py`.
    - El ícono `assets/images/icon.png` existe y está referenciado correctamente.
    - La fuente `assets/fonts/RobotoSlab.ttf` existe.
 

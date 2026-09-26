@@ -1,13 +1,15 @@
 from kivy.uix.screenmanager import Screen
 
-class HomeBase(Screen):
+class HomeBaseView(Screen):
     def cambiar_color_nav(self, btn, lb):
         btn.canvas.before.children[0].rgba = (1, 1, 1, 1)
         lb.font_name = "assets/fonts/RobotoSlab-Bold"
         lb.color = (1, 1, 1, 1)
+        
     def reset_color_nave(self, btn, lb):
         btn.canvas.before.children[0].rgba = (1, 1, 1, 0.5)
         lb.font_name = "assets/fonts/RobotoSlab-Regular"
         lb.color = (1, 1, 1, 0.5)
 
-
+    def go_login(self):
+        self.manager.current = "login"

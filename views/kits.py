@@ -1,6 +1,4 @@
 from kivy.uix.screenmanager import Screen
 
-class Home(Screen):
+class KitsView(Screen):
     pass
-
-
