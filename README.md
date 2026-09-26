@@ -7,6 +7,9 @@
   * [1.2. Creación de entorno virtual](#12-creacion-de-entorno-virtual)
   * [1.3. Instalación de requerimientos](#13-instalacion-de-requerimientos)
 * [2. Funcionamiento](#2-funcionamiento)
+  * [2.1. Compilación del .apk](#21-compilacion-del-apk)
+  * [2.2. Lanzar la apk](#22-lanzar-la-apk)
+
 
 ## 1. Instrucciones
 
@@ -51,6 +54,38 @@ pip install -r requirements.txt
 ```
 
 ## 2. Funcionamiento
+
+Para correr la aplicación.
+
+``` python
+python main.py
+```
+
+### 2.1. Compilación del .apk
+
+Si actualizas cualquier recurso del directorio necesitas volver a compilar el .apk
+
+Las .apk se guardan en bin/
+
+Para crear una version actualizada localmente:
+
+``` bash
+buildozer android debug
+```
+
+### 2.2. Lanzar la apk
+
+Para tener una nueva version .apk en produccion.
+
+``` bash
+buildozer android release
+```
+
+Se necesita configurar una firma para lanzar una apk final.
+
+
+
+
 
 
 
