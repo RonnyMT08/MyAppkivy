@@ -1,3 +1,158 @@
 <ModosView>:
-    Label:
-        text: "modos en proceso"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        Label:
+            text: "Modos de Juego"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
+
+        ScrollView:
+            GridLayout:
+                cols: 1
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(140)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Label:
+                        text: "Equipo vs Equipo"
+                        font_size: sp(20)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(30)
+                        color: TEXT_PRIMARY
+
+                    Label:
+                        text: "Dos equipos compiten por capturar la bandera o eliminar al rival."
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Jugadores: 10-20"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY
+                        Label:
+                            text: "Duración: 30 min"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(140)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Label:
+                        text: "Battle Royale"
+                        font_size: sp(20)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(30)
+                        color: TEXT_PRIMARY
+
+                    Label:
+                        text: "Todos contra todos. El último en pie gana."
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Jugadores: 20-40"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY
+                        Label:
+                            text: "Duración: 45 min"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(140)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Label:
+                        text: "Captura la Bandera"
+                        font_size: sp(20)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(30)
+                        color: TEXT_PRIMARY
+
+                    Label:
+                        text: "Captura la bandera enemiga y llévala a tu base."
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Jugadores: 12-24"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY
+                        Label:
+                            text: "Duración: 40 min"
+                            font_size: sp(13)
+                            color: TEXT_SECONDARY

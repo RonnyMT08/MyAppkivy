@@ -2,13 +2,12 @@ import os
 import glob
 
 from kivy.config import Config
-Config.set('kivy', 'clipboard', 'null')  # Evita errores de xclip/xsel en Linux
+Config.set('kivy', 'clipboard', 'null')
 
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager
 
-# Importar todas las vistas
 from views.login import LoginView
 from views.homebase import HomeBaseView
 from views.navbase import NavBaseView
@@ -23,15 +22,15 @@ from views.publica import PublicaView
 from views.privada import PrivadaView
 
 
-def load_kv_files(directory="views"):
-    """Carga automáticamente todos los archivos .kv del directorio especificado."""
-    kv_files = glob.glob(os.path.join(directory, "*.kv"))
+def load_kv_files():
+    # Cargar estilos globales primero
+    Builder.load_file("styles.kv")
+    # Cargar vistas
+    kv_files = glob.glob(os.path.join("views", "*.kv"))
     for kv_file in sorted(kv_files):
         Builder.load_file(kv_file)
-        print(f"Cargado: {kv_file}")
 
 
-# Registro de vistas: (nombre_en_screenmanager, ClaseVista)
 VIEWS = [
     ("login",     LoginView),
     ("navbase",   NavBaseView),
@@ -53,8 +52,7 @@ class MyApp(App):
         self.title = "My Kivy App"
         self.icon = "assets/images/icon.png"
 
-        # Cargar todos los archivos .kv automáticamente
-        load_kv_files("views")
+        load_kv_files()
 
         sm = ScreenManager()
         for name, view_class in VIEWS:

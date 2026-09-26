@@ -1,124 +1,143 @@
-# Air Soft - KIWI - Python 
+# Air Soft - Kivy App
+
+Aplicación móvil construida con **Kivy** para gestión de reservas de Air Soft.
 
 ## Índice
 
-* [1. Instrucciones](#1-instrucciones)
-  * [1.1. Instalación de Python](#11-instalacion-de-python)
-  * [1.2. Creación de entorno virtual](#12-creacion-de-entorno-virtual)
-  * [1.3. Instalación de requerimientos](#13-instalacion-de-requerimientos)
-* [2. Funcionamiento](#2-funcionamiento)
-  * [2.1. Compilación del .apk](#21-compilacion-del-apk)
-  * [2.2. Lanzar la apk](#22-lanzar-la-apk)
-* [3. Permisos de aplicación](#3-permisos-de-aplicacion)
-  * [3.1. Teclado y raton](#31-teclado-y-raton)
-* [4. Otros](#4-otros)
+1. [Características](#características)
+2. [Estructura del Proyecto](#estructura-del-proyecto)
+3. [Instalación](#instalación)
+   1. [Crear entorno virtual](#1-crear-entorno-virtual)
+   2. [Instalar dependencias](#2-instalar-dependencias)
+4. [Uso](#uso)
+   1. [Ejecutar en desarrollo](#ejecutar-en-desarrollo)
+   2. [Compilar APK](#compilar-apk)
+5. [Permisos en Linux](#permisos-en-linux)
+6. [Recursos](#recursos)
+7. [Pendientes de Desarrollo](#7-pendientes-de-desarrollo)
 
+## 1. Características
 
+- Autenticación de usuarios
+- Navegación entre pantallas con ScreenManager
+- Interfaz personalizada con Kivy Language (.kv)
+- Estructura modular de vistas
+- Carga automática de archivos .kv
 
+## 2. Estructura del Proyecto
 
-## 1. Instrucciones
-
-### 1.1. Instalación de Python
-
-Instalación de paquetes necesarios.
-
-```bash
-python3 --version  #para ver si tienes python3 instalado.
-python3.13-venv --version #para ver si tienes instalado el paquete para entornos virtuales con python.
+```
+MyAppkivy/
+├── main.py                  # Punto de entrada de la aplicación
+├── views/                   # Vistas (pantallas) de la aplicación
+│   ├── login.py / login.kv
+│   ├── home.py / home.kv
+│   ├── navbase.py / navbase.kv
+│   ├── homebase.py / homebase.kv
+│   ├── contacto.py / contacto.kv
+│   ├── reservas.py / reservas.kv
+│   ├── cuenta.py / cuenta.kv
+│   ├── mapas.py / mapas.kv
+│   ├── kits.py / kits.kv
+│   ├── modos.py / modos.kv
+│   ├── publica.py / publica.kv
+│   └── privada.py / privada.kv
+├── widgets/                 # Widgets personalizados
+│   ├── custom_buttons.py
+│   └── custom_buttons.kv
+├── assets/                  # Recursos (imágenes, fuentes, iconos)
+├── buildozer.spec           # Configuración para compilar APK
+└── requirements.txt         # Dependencias Python
 ```
 
-En caso de no contar con lo anterior:
+## 3. Instalación
 
-```bash
-apt install python3 
-apt install pyhton3.13-venv
-```
-
-### 1.2. Creación de entorno virtual
-
-Crear un directorio para almacenar los archivos necesarios para el entorno virtual.
+### 3.1. Crear entorno virtual
 
 ```bash
 python3 -m venv .venv
-```
-
-Activar el entorno virtual.
-
-```bash
 source .venv/bin/activate
 ```
 
-Importante:
-
-- Siempre se debe activar el entorno virtual antes de accerder a la aplicación.
-
-### 1.3. Instalación de requerimientos
+### 3.2. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 2. Funcionamiento
+## 4. Uso
 
-Para correr la aplicación.
+### 4.1. Ejecutar en desarrollo
 
-``` python
+```bash
 python main.py
 ```
 
-### 2.1. Compilación del .apk
+### 4.2. Compilar APK
 
-Si actualizas cualquier recurso del directorio necesitas volver a compilar el .apk
-
-Las .apk se guardan en bin/
-
-Para crear una version actualizada localmente:
-
-``` bash
+```bash
+# Debug
 buildozer android debug
-```
 
-### 2.2. Lanzar la apk
-
-Para tener una nueva version .apk en produccion.
-
-``` bash
+# Release
 buildozer android release
 ```
 
-Se necesita configurar una firma para lanzar una apk final.
+## 5. Permisos en Linux
 
-
-## 3. Permisos de aplicación
-
-### 3.1. Teclado y raton
-
-Si estas desarrolando y probando la aplicación tenes que tener los permisos para que la aplicación fluya correctamente (sin esto *TextInput* puede comportarse indefinidamente).
-
-- **paso 1** Agrega tu usuario al grupo que controla el teclado y el mause
+Para que el teclado y mouse funcionen correctamente durante el desarrollo:
 
 ```bash
 sudo usermod -aG input $USER
-```
-
-- **paso 2** Aplica el cambio inmediatamente para esta sesión de terminal
-
-```bash
 newgrp input
 ```
 
-- **paso 3** Reincia Reinicia la Sesión.
+Reinicia la sesión después de aplicar los cambios.
 
-## 4. Otros
+## 6. Recursos
 
-Sitio de imagenes utilizado.
+- [Iconos - Flaticon](https://www.flaticon.es)
+- [Documentación Kivy](https://kivy.org/doc/stable/)
 
-[iconos de la aplicación](https://www.flaticon.es)
+## 7. Pendientes de Desarrollo
 
+### 7.1. Autenticación
+- [ ] Validar credenciales contra una API o base de datos (actualmente hardcodeado)
+- [ ] Hashear contraseñas (bcrypt, argon2)
+- [ ] Token de sesión (JWT) y persistencia de sesión
+- [ ] Registro de usuarios
+- [ ] Recuperación de contraseña
 
+### 7.2. Vistas sin implementar
+- [ ] **Mapas**: mostrar mapa real (Google Maps, Mapbox, uOSM)
+- [ ] **Kits**: listado de kits con imágenes, precios y detalles
+- [ ] **Modos**: descripción de modos de juego
+- [ ] **Publica**: pantalla de juegos públicos
+- [ ] **Privada**: pantalla de juegos privados
+- [ ] **Reservas**: formulario de reserva con fecha, hora y cupo
+- [ ] **Cuenta**: perfil de usuario, edición de datos, historial
+- [ ] **Contacto**: formulario funcional con backend
 
+### 7.3. Funcionalidad transversal
+- [ ] Conectividad con backend (REST API o Firebase)
+- [ ] Manejo de estado global (patrón Store o Redux-like)
+- [ ] Notificaciones push
+- [ ] Almacenamiento local (SQLite, SharedPreferences)
+- [ ] Manejo de errores de red y estados de carga (spinners)
+- [ ] Validación de formularios (email, teléfono, contraseñas)
+- [ ] Internacionalización (i18n)
 
+### 7.4. UX/UI
+- [ ] Indicadores de carga (Spinner, Skeleton)
+- [ ] Confirmación de acciones destructivas (diálogos)
+- [ ] Notificaciones toast / snackbar
+- [ ] Modo oscuro
+- [ ] Responsive para tablets
+- [ ] Animaciones de transición entre pantallas
 
-
-
-
+### 7.5. Calidad
+- [ ] Tests unitarios (pytest)
+- [ ] Tests de integración (Kivy testing)
+- [ ] CI/CD (GitHub Actions)
+- [ ] Documentación de API
+- [ ] Manejo de logs estructurado

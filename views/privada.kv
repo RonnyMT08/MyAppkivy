@@ -1,3 +1,86 @@
 <PrivadaView>:
-    Label:
-        text: "privada en proceso"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(30)
+        spacing: dp(20)
+
+        Label:
+            text: "Juegos Privados"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
+
+        Widget:
+            size_hint_y: 0.3
+
+        Label:
+            text: "Crear Sala"
+            font_size: sp(20)
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            size_hint_y: None
+            height: dp(35)
+            color: TEXT_PRIMARY
+
+        TextInput:
+            id: nombre_sala
+            hint_text: "Nombre de la sala"
+            size_hint_y: None
+            height: dp(50)
+            multiline: False
+            padding: [15, 15]
+
+        TextInput:
+            id: codigo_sala
+            hint_text: "Código (ej: ABC123)"
+            size_hint_y: None
+            height: dp(50)
+            multiline: False
+            padding: [15, 15]
+
+        Button:
+            text: "Crear Sala"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.crear_sala(codigo_sala.text, nombre_sala.text)
+
+        Widget:
+            size_hint_y: 0.1
+
+        Label:
+            text: "Unirse a una Sala"
+            font_size: sp(20)
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            size_hint_y: None
+            height: dp(35)
+            color: TEXT_PRIMARY
+
+        TextInput:
+            id: codigo_unirse
+            hint_text: "Código de la sala"
+            size_hint_y: None
+            height: dp(50)
+            multiline: False
+            padding: [15, 15]
+
+        Button:
+            text: "Unirse"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.unirse_a_sala(codigo_unirse.text)
+
+        Widget:

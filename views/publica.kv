@@ -1,3 +1,176 @@
 <PublicaView>:
-    Label:
-        text: "publica en proceso"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        Label:
+            text: "Juegos Públicos"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
+
+        ScrollView:
+            GridLayout:
+                cols: 1
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(130)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Partido del Sábado"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "15/20"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
+
+                    Label:
+                        text: "28 Sep 2026 - 10:00 | Equipo vs Equipo"
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    Button:
+                        text: "Unirse"
+                        size_hint_y: None
+                        height: dp(40)
+                        background_normal: ""
+                        background_color: PRIMARY
+                        on_press: root.unirse_al_juego({"nombre": "Partido del Sábado"})
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(130)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Batalla Nocturna"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "10/30"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
+
+                    Label:
+                        text: "3 Oct 2026 - 20:00 | Battle Royale"
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    Button:
+                        text: "Unirse"
+                        size_hint_y: None
+                        height: dp(40)
+                        background_normal: ""
+                        background_color: PRIMARY
+                        on_press: root.unirse_al_juego({"nombre": "Batalla Nocturna"})
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(130)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Torneo Relámpago"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "20/40"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
+
+                    Label:
+                        text: "10 Oct 2026 - 14:00 | Captura la Bandera"
+                        font_size: sp(14)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+
+                    Button:
+                        text: "Unirse"
+                        size_hint_y: None
+                        height: dp(40)
+                        background_normal: ""
+                        background_color: PRIMARY
+                        on_press: root.unirse_al_juego({"nombre": "Torneo Relámpago"})

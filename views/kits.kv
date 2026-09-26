@@ -1,3 +1,161 @@
 <KitsView>:
-    Label:
-        text: "kits en proceso"
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(10)
+
+        Label:
+            text: "Kits Disponibles"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
+
+        ScrollView:
+            GridLayout:
+                cols: 1
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+                    height: dp(120)
+                    padding: dp(10)
+                    spacing: dp(15)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Image:
+                        source: "assets/icons/kits.png"
+                        size_hint_x: None
+                        width: dp(100)
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        spacing: dp(5)
+
+                        Label:
+                            text: "Kit Básico"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            text_size: self.size
+                            color: TEXT_PRIMARY
+
+                        Label:
+                            text: "Guantes, gafas y rodilleras"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            text_size: self.size
+
+                        Label:
+                            text: "$50"
+                            font_size: sp(20)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            color: PRIMARY
+                            halign: "left"
+                            text_size: self.size
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+                    height: dp(120)
+                    padding: dp(10)
+                    spacing: dp(15)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Image:
+                        source: "assets/icons/kits.png"
+                        size_hint_x: None
+                        width: dp(100)
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        spacing: dp(5)
+
+                        Label:
+                            text: "Kit Táctico"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            text_size: self.size
+                            color: TEXT_PRIMARY
+
+                        Label:
+                            text: "Chaleco, casco y protección completa"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            text_size: self.size
+
+                        Label:
+                            text: "$120"
+                            font_size: sp(20)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            color: PRIMARY
+                            halign: "left"
+                            text_size: self.size
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    size_hint_y: None
+                    height: dp(120)
+                    padding: dp(10)
+                    spacing: dp(15)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    Image:
+                        source: "assets/icons/kits.png"
+                        size_hint_x: None
+                        width: dp(100)
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        spacing: dp(5)
+
+                        Label:
+                            text: "Kit Profesional"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            text_size: self.size
+                            color: TEXT_PRIMARY
+
+                        Label:
+                            text: "Equipo completo con protecciones reforzadas"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            text_size: self.size
+
+                        Label:
+                            text: "$250"
+                            font_size: sp(20)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            color: PRIMARY
+                            halign: "left"
+                            text_size: self.size

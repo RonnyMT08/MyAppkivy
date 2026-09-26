@@ -1,123 +1,212 @@
 <MapasView>:
     BoxLayout:
         orientation: "vertical"
-        size_hint: 1, 1 
-        canvas.before:
-            # Color:
-            #     rgba: (1, 0.5, 1, 0.5)   # Fondo Azul
-            # Rectangle:
-            #     pos: self.pos
-            #     size: self.size
+        padding: dp(20)
+        spacing: dp(10)
 
-           
-        # Mapass
-        BoxLayout:
-            orientation: "horizontal"
-            size_hint: 1, 1 
-            spacing: dp(0)
-            padding: dp(10), dp(20), dp(10), dp(10)
+        Label:
+            text: "Campos de Juego"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
 
-            # canvas.before:
-            #     Color:
-            #         rgba: (1, 1, 1, 0.5)   # Fondo Azul
-            #     Rectangle:
-            #         pos: self.pos
-            #         size: self.size
-            
-            Image:
-                id: imagen_cambiable
-                source: "assets/images/mapa1.png"
-                allow_stretch: True
-                keep_ratio: False
+        ScrollView:
+            GridLayout:
+                cols: 1
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
 
-            
-        #panel de informacion?
-        BoxLayout:
-            orientation: "vertical"
-            size_hint: 1, None
-            height: dp(130)
-            padding: dp(10), dp(0)
-            canvas.before:
-                Color:
-                    rgba: (0.2, 0.47, 0.2, 1)
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(200)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
 
-                RoundedRectangle:
-                    pos: self.pos
-                    size: self.size
-                    radius: [15]
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Campo Central"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "5 km"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
 
-            BoxLayout:
-                orientation: "horizontal"
-                size_hint: 1, None
-                height: dp(25)
-                padding: dp(0)
-                # canvas.before:
-                #     Color:
-                #         rgba: (1, 1, 1, 0.8)
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
+                    Image:
+                        source: "assets/images/mapa1.png"
+                        size_hint_y: None
+                        height: dp(50)
 
-                Button:
-                    text: "<"
-                    size_hint: None, None
-                    size: dp(40), dp(40)
-                    on_press: imagen_cambiable.source = "assets/images/mapa2.png"
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
-                Label:
-                    text: "Informacion Relevante"
-                    size_hint: 0.2, None
-                    height: dp(45)
-                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                    font_size: dp(18)
-                    halign: "center" #alinear texto
-                    valign: "middle" #alinear texto
-                    text_size: self.size #para alinear el texto
-                    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                    BoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: None
+                        height: dp(40)
+                        spacing: dp(10)
 
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (0, 1, 1, 0.5)
-                    #     Rectangle:
-                    #         pos: self.pos
-                    #         size: self.size 
-                Button:
-                    text: ">"
-                    size_hint: None, None
-                    size: dp(40), dp(40)
-                    on_press: imagen_cambiable.source = "assets/images/mapa3.png"
-                    background_normal: ""
-                    background_color: (0, 0, 0, 0)
-                    pos_hint: {"center_x": 0.7, "center_y": 0.5}
+                        Label:
+                            text: "Av. Principal 123"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.6
 
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, None
-                height: dp(90)
-                padding: dp(20), dp(0), dp(20), dp(0)
-                # canvas.before:
-                #     Color:
-                #         rgba: (0, 1, 1, 0.5)
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
-                Label:
-                    size_hint: 1, None
-                    padding: dp(0)
-                    height: dp(110)
-                    halign: "left" #alinear texto
-                    valign: "middle" #alinear texto
-                    text_size: self.size #para alinear el texto
-                    font_size: dp(14)
-                    text: "Cantidad maxima de jugadores: 45 \nModalidades: Todos vs Todos \nCaptura la bandera \nPunto Caliente"
-                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (0.5, 1, 1, 0.5)
-                    #     Rectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                    
+                        Button:
+                            text: "Cómo llegar"
+                            size_hint_x: 0.4
+                            height: dp(40)
+                            background_normal: ""
+                            background_color: PRIMARY
+                            on_press: import webbrowser; webbrowser.open("https://maps.google.com/?q=Av.+Principal+123")
 
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(200)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Bosque Norte"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "12 km"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
+
+                    Image:
+                        source: "assets/images/mapa2.png"
+                        size_hint_y: None
+                        height: dp(50)
+
+                    BoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: None
+                        height: dp(40)
+                        spacing: dp(10)
+
+                        Label:
+                            text: "Ruta 4, km 20"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.6
+
+                        Button:
+                            text: "Cómo llegar"
+                            size_hint_x: 0.4
+                            height: dp(40)
+                            background_normal: ""
+                            background_color: PRIMARY
+                            on_press: import webbrowser; webbrowser.open("https://maps.google.com/?q=Ruta+4+km+20")
+
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint_y: None
+                    height: dp(200)
+                    padding: dp(15)
+                    spacing: dp(8)
+                    canvas.before:
+                        Color:
+                            rgba: BG_CARD
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [10]
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(30)
+                        Label:
+                            text: "Zona Sur"
+                            font_size: sp(18)
+                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.7
+                            color: TEXT_PRIMARY
+                        Label:
+                            text: "8 km"
+                            font_size: sp(14)
+                            color: PRIMARY
+                            halign: "right"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.3
+
+                    Image:
+                        source: "assets/images/mapa3.png"
+                        size_hint_y: None
+                        height: dp(50)
+
+                    BoxLayout:
+                        orientation: "horizontal"
+                        size_hint_y: None
+                        height: dp(40)
+                        spacing: dp(10)
+
+                        Label:
+                            text: "Calle 8 #456"
+                            font_size: sp(14)
+                            color: TEXT_SECONDARY
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_x: 0.6
+
+                        Button:
+                            text: "Cómo llegar"
+                            size_hint_x: 0.4
+                            height: dp(40)
+                            background_normal: ""
+                            background_color: PRIMARY
+                            on_press: import webbrowser; webbrowser.open("https://maps.google.com/?q=Calle+8+456")

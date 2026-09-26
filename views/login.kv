@@ -1,38 +1,26 @@
 <LoginView>:
-	name: 'login'  #nombre para el ScreenManager
-	email_ingresado: email_ingresado #necesario para que ObjectProperty lo reconozca
-	contrasenia_ingresada: contrasenia_ingresada #necesario para que ObjectProperty lo reconozca
-	
+    name: 'login'
+
     BoxLayout:
         orientation: "vertical"
-        ##### Fondo del app #####
         canvas.before:
             Color:
-                rgba: (1, 1, 1, 0.8)   # Fondo blanco opaco
+                rgba: (1, 1, 1, 0.8)
             Rectangle:
                 source: "assets/images/fondo_login.png"
                 pos: self.pos
                 size: self.size
-        ### Barra superior ###
         BoxLayout:
             orientation: "vertical"
             spacing: 0
             padding: 0
 
-            # Caja 1 #
             BoxLayout:
                 orientation: "vertical"
-                size_hint: 1, 1  
+                size_hint: 1, 1
                 spacing: 0
                 padding: dp(0)
-                # canvas.before:
-                #     Color:
-                #         rgba: (0.5, 0.5, 0.5, 0.5)  # fondo gris claro
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
 
-                #Login Account
                 BoxLayout:
                     orientation: "vertical"
                     padding: dp(40), dp(10), dp(40), dp(0)
@@ -49,7 +37,7 @@
                         font_size: sp(35)
                         text_size: self.size
                         size_hint_y: None
-                        height: dp(40)   # altura fija
+                        height: dp(40)
 
                     Label:
                         text: "Please login with registered account"
@@ -58,150 +46,126 @@
                         valign: "middle"
                         text_size: self.size
                         size_hint_y: None
-                        height: dp(30)   # altura fija
+                        height: dp(30)
 
-                #####################
-			    BoxLayout:
-			        orientation: "vertical"
-			        size_hint: 0.9, None
-			        padding: dp(20), dp(30)
-			        pos_hint: {"center_x": 0.5, "center_y": 0.4}
-			        height: dp(170)
-			        canvas.before:
-			            Color:
-			                rgba: (0.2, 0.47, 0.2, 0.8)
-			            RoundedRectangle:
-			                pos: self.pos
-			                size: self.size
-			                radius: [15]
-			        
-			        # Email    
-			        BoxLayout:
-			            orientation: "vertical"
-			            size_hint: 1, None
-			            height: dp(100)
-			            padding: [30, 0, 30, 0]
-			            # canvas.before:
-			            #     Color:
-			            #         rgba: (0.5, 0.5, 0.5, 0.5)  # fondo gris claro
-			            #     Rectangle:
-			            #         pos: self.pos
-			            #         size: self.size
+                BoxLayout:
+                    orientation: "vertical"
+                    size_hint: 0.9, None
+                    padding: dp(20), dp(30)
+                    pos_hint: {"center_x": 0.5, "center_y": 0.4}
+                    height: dp(170)
+                    canvas.before:
+                        Color:
+                            rgba: PRIMARY
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [15]
 
-			            Label:
-			                id: email
-			                text: "Email"
-			                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-			                halign: "left"
-			                valign: "middle"
-			                text_size: self.size
-			                size_hint_y: None
-			                height: dp(30)   # altura más grande para que el TextInput entre bien
+                    BoxLayout:
+                        orientation: "vertical"
+                        size_hint: 1, None
+                        height: dp(100)
+                        padding: [30, 0, 30, 0]
 
-			            BoxLayout:
-			                orientation: "vertical"
-			                size_hint_y: None
-			                height: dp(30)   # altura más grande para que el TextInput entre bien
-			                # canvas.before:
-			                #     Color:
-			                #         rgba: (0, 0, 0, 0.4)   
-			                #     RoundedRectangle:
-			                #         pos: self.pos
-			                #         size: self.size
-			                #         radius: [30]    
-			                TextInput:
-			                    id: email_ingresado
-			                    input_type: "mail"
-			                    text: "admin@gmail.com"
-			                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-			                    padding: 5
-			                    multiline: False
-			                    halign: "left"
-			                    valign: "middle"
-			                    text_size: self.size
-			                    size_hint_y: None
-			                    height: dp(30)   # altura más grande para que el TextInput entre bien
-			                    
-			        #password
-			        BoxLayout:
-			            orientation: "vertical"
-			            padding: [30, 0, 30, 0]
-			            size_hint: 1, None
-			            height: dp(70)
-			            # canvas.before:
-			            #     Color:
-			            #         rgba: (0.5, 1, 0.5, 0.5)  # fondo gris claro
-			            #     Rectangle:
-			            #         pos: self.pos
-			            #         size: self.size
+                        Label:
+                            id: email
+                            text: "Email"
+                            font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_y: None
+                            height: dp(30)
 
-			            Label:
-			                id: password
-			                text: "Password"
-			                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-			                halign: "left"
-			                valign: "middle"
-			                text_size: self.size
-			                size_hint_y: None
-			                height: dp(30)   # altura más grande para que el TextInput entre bien
+                        BoxLayout:
+                            orientation: "vertical"
+                            size_hint_y: None
+                            height: dp(30)
+                            TextInput:
+                                id: email_ingresado
+                                text: "admin@gmail.com"
+                                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                                padding: 5
+                                multiline: False
+                                halign: "left"
+                                valign: "middle"
+                                text_size: self.size
+                                size_hint_y: None
+                                height: dp(30)
+                    BoxLayout:
+                        orientation: "vertical"
+                        padding: [30, 0, 30, 0]
+                        size_hint: 1, None
+                        height: dp(70)
 
-			            BoxLayout:
-			                orientation: "vertical"
-			                size_hint_y: None
-			                height: dp(30)   # altura más grande para que el TextInput entre bien
-			                # canvas.before:
-			                #     Color:
-			                #         rgba: (0, 0, 0, 0.2)   # color de fondo
-			                #     RoundedRectangle:
-			                #         pos: self.pos
-			                #         size: self.size
-			                #         radius: [30]    
-			                TextInput:
-			                    id: contrasenia_ingresada
-			                    text: "1234"
-			                    password: True
-			                    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-			                    padding: 5
-			                    multiline: False
-			                    halign: "left"
-			                    valign: "middle"
-			                    text_size: self.size
-			                    size_hint_y: None
-			                    height: dp(30)   # altura más grande para que el TextInput entre bien			                
-                ########################
-            
-            
-            # Caja 2
+                        Label:
+                            id: password
+                            text: "Password"
+                            font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                            halign: "left"
+                            valign: "middle"
+                            text_size: self.size
+                            size_hint_y: None
+                            height: dp(30)
+
+                        BoxLayout:
+                            orientation: "vertical"
+                            size_hint_y: None
+                            height: dp(30)
+                            TextInput:
+                                id: contrasenia_ingresada
+                                text: "Enter your password"
+                                font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                                padding: 5
+                                multiline: False
+                                password: True
+                                halign: "left"
+                                valign: "middle"
+                                text_size: self.size
+                                size_hint_y: None
+                                height: dp(30)
+
             BoxLayout:
-                #padding: 0
-                #spacing: 0
-                size_hint: 1, None  
+                size_hint: 1, None
                 orientation: "vertical"
                 height: dp(150)
-                # canvas.before:
-                #     Color:
-                #         rgba: (0.8, 0.5, 0.5, 1)  # fondo rojizo
-                #     Rectangle:
-                #         pos: self.pos
-                #         size: self.size
-                ### sign in ###
                 FloatLayout:
                     padding: dp(40)
+                    Button:
+                        text: "Sign in"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.7}
+                        size_hint: 0.4 , 0.2
+                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                        height: dp(60)
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
+                        canvas.before:
+                            Color:
+                                rgba: PRIMARY
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [10]
+                        on_press: self.fill_color = (0, 1, 0, 0.5); root.capturar_login(email_ingresado, contrasenia_ingresada)
+                        on_release: self.fill_color = (0, 1, 0, 0.8)
 
                     Button:
-					    text: "Sign in"
-					    pos_hint: {"center_x": 0.5, "center_y": 0.7}
-					    size_hint: 0.4 , 0.2
-					    font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-					    height: dp(60)
-					    background_normal: ""
-					    background_color: (0, 0, 0, 0)
-					    canvas.before:
-					        Color:
-					            rgba: (0.2, 0.47, 0.2, 1)
-					        RoundedRectangle:
-					            pos: self.pos
-					            size: self.size
-					            radius: [10] 
-					    on_press: root.capturar_login(email_ingresado.text, contrasenia_ingresada.text);
-					    on_release: self.fill_color = (0, 1, 0, 0.8)
+                        text: "Created account"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                        background_normal: ""
+                        size_hint: None, None
+                        background_color: (0, 0, 0, 0)
+                        size: dp(120), dp(30)
+                        on_press: self.fill_color = (0, 1, 0, 0.5); sm.current = "newuser"
+
+                    Button:
+                        text: "¿Recuperar contra?"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.3}
+                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
+                        size_hint: None, None
+                        background_normal: ""
+                        background_color: (0, 0, 0, 0)
+                        size: dp(135), dp(30)
+                        on_press: self.fill_color = (0, 1, 0, 0.5); sm.current = "password"

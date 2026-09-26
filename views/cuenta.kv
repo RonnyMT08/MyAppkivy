@@ -1,154 +1,140 @@
 <CuentaView>:
     BoxLayout:
         orientation: "vertical"
-        padding: dp(0) 
-        canvas.before:
-            Color:
-                rgba: (1, 1, 1, 0.4)
-            Rectangle:
-                source: "assets/images/fondo.png"
-                pos: self.pos
-                size: self.size
-        
-        #FONDO DE LA PAGINA
-        BoxLayout:
-            orientation: "vertical"
-            spacing: dp(10)
-            padding: dp(10)
-            # canvas.before:
-            #     Color:
-            #         rgba: (0, 0, 1, 0.5)
-            #     Rectangle:
-            #         pos: self.pos
-            #         size: self.size
+        padding: dp(20)
+        spacing: dp(10)
 
-            #Conteiner perfil
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, None
-                height: dp(300)
-                padding: dp(15) #
-                spacing: 0 #
-                canvas.before:
-                    Color:
-                        rgba: (1, 1, 1, 0.5)
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [10] 
+        Label:
+            text: "Mi Cuenta"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
 
-                BoxLayout:
-                    orientation: "horizontal"
-                    size_hint: 1, 1
-                    BoxLayout:
-                        canvas.before:
-                            Color:
-                                rgba: (0, 1, 0, 0.5)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        Label:
-                            text: "imagen"
-
-                    BoxLayout:
-                        orientation: "vertical"
-                        size_hint: 1, 1
-                        # canvas.before:
-                        #     Color:
-                        #         rgba: (1, 1, 0, 0.5)
-                        #     RoundedRectangle:
-                        #         pos: self.pos
-                        #         size: self.size
-                        #         radius: [10]
-                        Label:
-                            padding: dp(20), dp(0)
-                            halign: "left" #alinear texto   
-                            valign: "middle" #alinear texto
-                            text_size: self.size #para alinear el texto
-                            text: "Ronis123 \nRonny Mamani Torrez \n ronny@gmail.com\n masculino \n10684277 \n Acerca de mi: holasasa"
-                            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                            font_size: dp(14)
-                            # canvas.before:
-                            #     Color:
-                            #         rgba: (1, 1, 0, 0.5)
-                            #     RoundedRectangle:
-                            #         pos: self.pos
-                            #         size: self.size
-                            #         radius: [10]
-                        Button:
-                            text: "editar"
-                            size_hint: None, None
-                            size: dp(100), dp(35)
-                            pos_hint: {"center_x":0.5, "center_y":0.5}
-                            background_normal: ""
-                            background_color: (0, 0, 0, 0)
-                            canvas.before:
-                                Color:
-                                    rgba: (0, 0.5, 0, 0.8)
-                                RoundedRectangle:
-                                    pos: self.pos
-                                    size: self.size
-                                    radius: [10]
-                    
-
-            #Conteiner de Estadisticas
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, None
-                height: dp(150) ##### SE MODIFICA CON LA CANTIDAD DE JUGADAS
-                padding: dp(15) #
-                spacing: 0 #
-                canvas.before:
-                    Color:
-                        rgba: (0, 0.5, 0, 0.8)
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [10] 
-
-                BoxLayout:
-                    size_hint: 1, None
-                    height: dp(55)
-                    padding: dp(0), dp(0), dp(10), dp(10) 
-                    spacing: 0 #
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (1, 0, 0, 0.5)
-                    #     RoundedRectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                    #         radius: [10]  
-                    Label:
-                        text: "Mi historial de jugadas"
-                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
-                        padding: dp(15)
-                        size_hint: 1, None
-                        height: dp(55)
-                        font_size: sp(20)
+        ScrollView:
+            GridLayout:
+                cols: 1
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
 
                 BoxLayout:
                     orientation: "vertical"
-                    size_hint: 1, 1
-                    padding: dp(0), dp(0), dp(10), dp(0) 
+                    size_hint_y: None
+                    height: dp(180)
+                    padding: dp(20)
+                    spacing: dp(8)
                     canvas.before:
                         Color:
-                            rgba: (0, 0, 0, 0.5)
+                            rgba: (*PRIMARY[:3], 0.1)
                         RoundedRectangle:
                             pos: self.pos
                             size: self.size
                             radius: [10]
+
                     Label:
-                        text: "Todos vs Todos: 2025: Victoria \nCaptura la bandera: 2024: Derrota"
-                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                        padding: dp(20), dp(0)
-                        size_hint: 1, None 
-                        height: dp(55)
-                        halign: "left" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
+                        text: "Juan Pérez"
+                        font_size: sp(24)
+                        font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(35)
+                        color: TEXT_PRIMARY
 
-            BoxLayout:
-                size_hint: 1,1           
+                    Label:
+                        text: "juan@email.com"
+                        font_size: sp(16)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(25)
 
-            
+                    Label:
+                        text: "+54 9 11 1234-5678"
+                        font_size: sp(16)
+                        color: TEXT_SECONDARY
+                        halign: "left"
+                        valign: "middle"
+                        text_size: self.size
+                        size_hint_y: None
+                        height: dp(25)
+
+                    BoxLayout:
+                        size_hint_y: None
+                        height: dp(40)
+                        spacing: dp(20)
+                        Label:
+                            text: "Nivel: Intermedio"
+                            font_size: sp(14)
+                            color: PRIMARY
+                        Label:
+                            text: "Partidos: 23"
+                            font_size: sp(14)
+                            color: PRIMARY
+                        Label:
+                            text: "Victorias: 11"
+                            font_size: sp(14)
+                            color: PRIMARY
+
+                Label:
+                    text: "Editar Datos"
+                    font_size: sp(20)
+                    font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+                    halign: "left"
+                    valign: "middle"
+                    text_size: self.size
+                    size_hint_y: None
+                    height: dp(35)
+                    color: TEXT_PRIMARY
+
+                TextInput:
+                    id: edit_nombre
+                    text: "Juan Pérez"
+                    hint_text: "Nombre"
+                    size_hint_y: None
+                    height: dp(50)
+                    multiline: False
+                    padding: [15, 15]
+
+                TextInput:
+                    id: edit_email
+                    text: "juan@email.com"
+                    hint_text: "Email"
+                    size_hint_y: None
+                    height: dp(50)
+                    multiline: False
+                    padding: [15, 15]
+
+                TextInput:
+                    id: edit_telefono
+                    text: "+54 9 11 1234-5678"
+                    hint_text: "Teléfono"
+                    size_hint_y: None
+                    height: dp(50)
+                    multiline: False
+                    input_filter: "int"
+                    padding: [15, 15]
+
+                Button:
+                    text: "Guardar Cambios"
+                    size_hint_y: None
+                    height: dp(50)
+                    background_normal: ""
+                    background_color: PRIMARY
+                    on_press: root.guardar_cambios(edit_nombre.text, edit_email.text, edit_telefono.text)
+
+        Button:
+            text: "Cerrar Sesión"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: ERROR
+            on_press: root.cerrar_sesion()

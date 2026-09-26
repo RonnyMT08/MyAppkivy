@@ -1,123 +1,53 @@
 <ContactoView>:
     BoxLayout:
         orientation: "vertical"
-        padding: dp(10) 
-        canvas.before:
-            Color:
-                rgba: (1, 1, 1, 0.2)
-            Rectangle:
-                source: "assets/images/fondo.png"
-                pos: self.pos
-                size: self.size
-        
-        #FONDO DE LA PAGINA
-        BoxLayout:
-            orientation: "vertical"
-            spacing: dp(20)
-            padding: dp(30), dp(30), dp(30),dp(0) 
-            # canvas.before:
-            #     Color:
-            #         rgba: (0, 0, 1, 0.5)
-            #     Rectangle:
-            #         pos: self.pos
-            #         size: self.size
+        padding: dp(30)
+        spacing: dp(20)
 
-            #Conteiner de contactos
-            BoxLayout:
-                orientation: "vertical"
-                size_hint: 1, None
-                height: dp(200)
-                padding: dp(15) #
-                canvas.before:
-                    Color:
-                        rgba: (1, 1, 1, 0.5)
-                    RoundedRectangle:
-                        pos: self.pos
-                        size: self.size
-                        radius: [10] 
+        Label:
+            text: "Contacto"
+            font_size: sp(28)
+            size_hint_y: None
+            height: dp(50)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            font_name: "assets/fonts/RobotoSlab-Bold.ttf"
+            color: TEXT_PRIMARY
 
-                BoxLayout:
-                    spacing: dp(10) #
-                    orientation: "vertical"
-                    size_hint: 1, 1
-                    # canvas.before:
-                    #     Color:
-                    #         rgba: (1, 1, 0, 0.5)
-                    #     RoundedRectangle:
-                    #         pos: self.pos
-                    #         size: self.size
-                    #         radius: [10]
-                    Button:
-                        text: "Email"
-                        padding: dp(20)
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0) #transparente
-                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                        canvas.before:
-                            Color:
-                                rgba: (0.2, 0.47, 0.2, 1)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        halign: "center" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        on_press: root.open_email() # Llama a la función para abrir el correo electrónico
-                    Button:
-                        text: "Instragram"
-                        padding: dp(20)
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0) #transparente
-                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                        canvas.before:
-                            Color:
-                                rgba: (0.8, 0.2, 0.5, 1)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        halign: "center" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        on_press: root.open_instagram() # Llama a la función para abrir Instagram
-                    Button:
-                        text: "Facebook"
-                        padding: dp(20)
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0) #transparente
-                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                        canvas.before:
-                            Color:
-                                rgba: (0.2, 0.2, 0.8, 1)
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        halign: "center" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        on_press: root.open_facebook() # Llama a la función para abrir Facebook
-                    Button:
-                        text: "Whatsapp"
-                        padding: dp(20)
-                        background_normal: ""
-                        background_color: (0, 0, 0, 0) #transparente
-                        font_name: "assets/fonts/RobotoSlab-Regular.ttf"
-                        canvas.before:
-                            Color:
-                                rgba: (0.2, 0.47, 0.2, 1)
-                                #rgba: (0.25, 0.65, 0.35, 1)   # color de fondo
-                            RoundedRectangle:
-                                pos: self.pos
-                                size: self.size
-                                radius: [10]
-                        halign: "center" #alinear texto   
-                        valign: "middle" #alinear texto
-                        text_size: self.size #para alinear el texto
-                        on_press: root.open_whatsapp() # Llama a la función para abrir Whatsapp
+        Widget:
+            size_hint_y: 0.2
 
-                    
+        Button:
+            text: "Instagram"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.open_instagram()
 
-            
-                                
+        Button:
+            text: "Facebook"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.open_facebook()
+
+        Button:
+            text: "WhatsApp"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.open_whatsapp()
+
+        Button:
+            text: "Email"
+            size_hint_y: None
+            height: dp(50)
+            background_normal: ""
+            background_color: PRIMARY
+            on_press: root.open_email()
+
+        Widget:

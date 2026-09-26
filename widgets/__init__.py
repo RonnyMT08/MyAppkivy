@@ -1,0 +1,17 @@
+from kivy.utils import get_color_from_hex
+
+PRIMARY = get_color_from_hex('#2E7D32')
+PRIMARY_DARK = get_color_from_hex('#1B5E20')
+PRIMARY_LIGHT = get_color_from_hex('#4CAF50')
+ACCENT = get_color_from_hex('#FF6F00')
+TEXT_PRIMARY = get_color_from_hex('#212121')
+TEXT_SECONDARY = get_color_from_hex('#757575')
+BACKGROUND = get_color_from_hex('#FFFFFF')
+BACKGROUND_CARD = get_color_from_hex('#F5F5F5')
+SURFACE = get_color_from_hex('#FFFFFF')
+BORDER = get_color_from_hex('#E0E0E0')
+SUCCESS = get_color_from_hex('#2E7D32')
+WARNING = get_color_from_hex('#F9A825')
+ERROR = get_color_from_hex('#C62828')
+ON_PRIMARY = get_color_from_hex('#FFFFFF')
+DISABLED = get_color_from_hex('#BDBDBD')
