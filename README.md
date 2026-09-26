@@ -9,6 +9,11 @@
 * [2. Funcionamiento](#2-funcionamiento)
   * [2.1. Compilación del .apk](#21-compilacion-del-apk)
   * [2.2. Lanzar la apk](#22-lanzar-la-apk)
+* [3. Permisos de aplicación](#3-permisos-de-aplicacion)
+  * [3.1. Teclado y raton](#31-teclado-y-raton)
+* [4. Otros](#4-otros)
+
+
 
 
 ## 1. Instrucciones
@@ -84,7 +89,31 @@ buildozer android release
 Se necesita configurar una firma para lanzar una apk final.
 
 
+## 3. Permisos de aplicación
 
+### 3.1. Teclado y raton
+
+Si estas desarrolando y probando la aplicación tenes que tener los permisos para que la aplicación fluya correctamente (sin esto *TextInput* puede comportarse indefinidamente).
+
+- **paso 1** Agrega tu usuario al grupo que controla el teclado y el mause
+
+```bash
+sudo usermod -aG input $USER
+```
+
+- **paso 2** Aplica el cambio inmediatamente para esta sesión de terminal
+
+```bash
+newgrp input
+```
+
+- **paso 3** Reincia Reinicia la Sesión.
+
+## 4. Otros
+
+Sitio de imagenes utilizado.
+
+[iconos de la aplicación](https://www.flaticon.es)
 
 
 
