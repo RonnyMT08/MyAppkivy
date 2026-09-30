@@ -1,4 +1,4 @@
-# Air Soft - Kivy App
+k# Air Soft - Kivy App
 
 Aplicación móvil construida con **Kivy** para gestión de reservas de Air Soft.
 
@@ -14,9 +14,8 @@ Aplicación móvil construida con **Kivy** para gestión de reservas de Air Soft
    2. [Compilar APK](#compilar-apk)
 5. [Permisos en Linux](#permisos-en-linux)
 6. [Recursos](#recursos)
-7. [Pendientes de Desarrollo](#7-pendientes-de-desarrollo)
 
-## 1. Características
+## Características
 
 - Autenticación de usuarios
 - Navegación entre pantallas con ScreenManager
@@ -24,7 +23,7 @@ Aplicación móvil construida con **Kivy** para gestión de reservas de Air Soft
 - Estructura modular de vistas
 - Carga automática de archivos .kv
 
-## 2. Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 MyAppkivy/
@@ -50,40 +49,97 @@ MyAppkivy/
 └── requirements.txt         # Dependencias Python
 ```
 
-## 3. Instalación
+## Instalación
 
-### 3.1. Crear entorno virtual
+### 1. Crear entorno virtual
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3.2. Instalar dependencias
+### 2. Instalar dependencias
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 4. Uso
+## Uso
 
-### 4.1. Ejecutar en desarrollo
+### Ejecutar en desarrollo
 
 ```bash
 python main.py
 ```
 
-### 4.2. Compilar APK
+### Compilar APK
+
+#### Dependencias del sistema (Linux)
+
+Instalar antes de compilar:
 
 ```bash
-# Debug
-buildozer android debug
-
-# Release
-buildozer android release
+sudo apt-get install -y \
+    python3-dev \
+    zlib1g-dev \
+    default-jdk \
+    autoconf \
+    libtool \
+    pkg-config \
+    libncurses-dev \
+    cmake \
+    libffi-dev \
+    libssl-dev \
+    cython3
 ```
 
-## 5. Permisos en Linux
+> **Nota:** `libncurses-dev` incluye tanto `libncurses5-dev` como `libncursesw5-dev`. Si `default-jdk` no está disponible, usá `apt search openjdk | grep jdk` para ver las versiones instalables.
+
+#### Instalación de Buildozer
+
+```bash
+pip install buildozer
+```
+
+> **Nota:** Cython es obligatorio para compilar Kivy a código nativo de Android. Buildozer lo busca en el Python del sistema, no en tu `.venv`.
+
+#### Inicializar (solo la primera vez)
+
+```bash
+buildozer init
+```
+
+Esto genera el archivo `buildozer.spec` con la configuración de tu app.
+
+#### Comandos básicos
+
+| Comando | Descripción |
+|---------|-------------|
+| `buildozer android debug` | Compila APK de desarrollo en `bin/` |
+| `buildozer android release` | Compila APK de producción en `bin/` |
+| `buildozer android debug deploy run` | Instala y ejecuta en dispositivo conectado |
+| `buildozer android debug logcat` | Muestra logs del dispositivo en tiempo real |
+| `buildozer -v android debug` | Modo verbose (más detalle de errores) |
+
+#### Flujo de trabajo habitual
+
+```bash
+# 1. Desarrollar y probar en PC
+python main.py
+
+# 2. Compilar APK
+buildozer android debug
+
+# 3. Probar en Android (conectar dispositivo por USB)
+buildozer android debug deploy run
+
+# 4. Ver logs si algo falla
+buildozer android debug logcat
+```
+
+> **Nota:** Buildozer solo funciona en Linux. En Windows usá WSL.
+
+## Permisos en Linux
 
 Para que el teclado y mouse funcionen correctamente durante el desarrollo:
 
@@ -94,50 +150,7 @@ newgrp input
 
 Reinicia la sesión después de aplicar los cambios.
 
-## 6. Recursos
+## Recursos
 
 - [Iconos - Flaticon](https://www.flaticon.es)
 - [Documentación Kivy](https://kivy.org/doc/stable/)
-
-## 7. Pendientes de Desarrollo
-
-### 7.1. Autenticación
-- [ ] Validar credenciales contra una API o base de datos (actualmente hardcodeado)
-- [ ] Hashear contraseñas (bcrypt, argon2)
-- [ ] Token de sesión (JWT) y persistencia de sesión
-- [ ] Registro de usuarios
-- [ ] Recuperación de contraseña
-
-### 7.2. Vistas sin implementar
-- [ ] **Mapas**: mostrar mapa real (Google Maps, Mapbox, uOSM)
-- [ ] **Kits**: listado de kits con imágenes, precios y detalles
-- [ ] **Modos**: descripción de modos de juego
-- [ ] **Publica**: pantalla de juegos públicos
-- [ ] **Privada**: pantalla de juegos privados
-- [ ] **Reservas**: formulario de reserva con fecha, hora y cupo
-- [ ] **Cuenta**: perfil de usuario, edición de datos, historial
-- [ ] **Contacto**: formulario funcional con backend
-
-### 7.3. Funcionalidad transversal
-- [ ] Conectividad con backend (REST API o Firebase)
-- [ ] Manejo de estado global (patrón Store o Redux-like)
-- [ ] Notificaciones push
-- [ ] Almacenamiento local (SQLite, SharedPreferences)
-- [ ] Manejo de errores de red y estados de carga (spinners)
-- [ ] Validación de formularios (email, teléfono, contraseñas)
-- [ ] Internacionalización (i18n)
-
-### 7.4. UX/UI
-- [ ] Indicadores de carga (Spinner, Skeleton)
-- [ ] Confirmación de acciones destructivas (diálogos)
-- [ ] Notificaciones toast / snackbar
-- [ ] Modo oscuro
-- [ ] Responsive para tablets
-- [ ] Animaciones de transición entre pantallas
-
-### 7.5. Calidad
-- [ ] Tests unitarios (pytest)
-- [ ] Tests de integración (Kivy testing)
-- [ ] CI/CD (GitHub Actions)
-- [ ] Documentación de API
-- [ ] Manejo de logs estructurado

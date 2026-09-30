@@ -23,7 +23,7 @@ android.permissions = INTERNET
 version = 0.1
 
 # Dependencias necesarias
-requirements = python3,kivy
+requirements = python3==3.11,kivy,requests
 
 # Ocultar consola (solo relevante en Windows)
 console = False
@@ -36,11 +36,11 @@ exclude_patterns = tests, *.md, .venv
 target = android
 
 # Opciones de Android
-android.api = 33
-android.minapi = 21
+android.api = 34
+android.minapi = 24
 android.ndk = 25b
-android.ndk_api = 21
-android.arch = armeabi-v7a
+android.ndk_api = 24
+android.arch = arm64-v8a
 
 # Directorio de compilación
 build_dir = .buildozer
